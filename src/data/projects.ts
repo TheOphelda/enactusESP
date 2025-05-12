@@ -16,17 +16,13 @@ export const projects: Project[] = [
     impact: 'Le projet a permis de former plus de 500 femmes et de créer 50 emplois directs.',
     team: [
       {
-        name: 'Fatou Diop',
+        name: 'Khabane',
         role: 'Chef de Projet'
       },
       {
         name: 'Aminata Sow',
-        role: 'Responsable Formation'
+        role: 'Adjoint Chef de Projet'
       },
-      {
-        name: 'Omar Fall',
-        role: 'Coordinateur Terrain'
-      }
     ],
     sdgs: [
       { number: 1, title: 'Pas de pauvreté', color: '#E5243B' },
@@ -37,29 +33,25 @@ export const projects: Project[] = [
   {
     id: 'shery',
     title: 'Shery',
-    shortDescription: 'Solutions innovantes pour l\'accès à l\'eau potable',
-    fullDescription: 'Shery développe des solutions innovantes pour améliorer l\'accès à l\'eau potable dans les zones rurales. Le projet combine technologie et formation pour assurer un accès durable à l\'eau.',
+    shortDescription: 'Projet de lutte contre la précarité menstruelle',
+    fullDescription: 'SHERY vise à lutter contre la précarité menstruelle en fournissant des serviettes hygiéniques réutilisables de qualité, accompagnées de tisanes naturelles pour soulager les maux menstruels, tout en sensibilisant sur l\'importance de la gestion de l\'hygiène menstruelle. L\'objectif est de répondre à la précarité menstruelle au Sénégal en offrant une alternative durable et abordable aux serviettes hygiéniques jetables.',
     image: '/African.png',
     goals: [
-      'Installation de systèmes de filtration d\'eau',
-      'Formation des communautés locales',
-      'Maintenance des installations',
-      'Sensibilisation à l\'hygiène'
+      'Eliminer la précarité menstruelle chez au moins 3000 filles',
+      'Sortir au moins 1000 femmes du seuil de pauvreté ',
+      'Fournir au moins 2000 Serviettes hygiéniques réutilisables soit au moins des ventes de 24000000 FCFA ',
+      'Sensibiliser les jeunes filles sur les thématiques liées à la santé menstruelle'
     ],
-    impact: 'Plus de 10 000 personnes ont désormais accès à l\'eau potable grâce au projet.',
+    impact: 'Plus de 10 000 personnes touchées par le Shery Talk sur Instagram et Tiktok.',
     team: [
       {
-        name: 'Moussa Diallo',
+        name: 'Laeticia',
         role: 'Chef de Projet'
       },
       {
-        name: 'Aïssatou Ba',
-        role: 'Ingénieure Eau'
+        name: 'Birahim Samb',
+        role: 'Adjoint Chef de Projet'
       },
-      {
-        name: 'Ibrahima Ndiaye',
-        role: 'Formateur'
-      }
     ],
     sdgs: [
       { number: 3, title: 'Bonne santé et bien-être', color: '#4C9F38' },
@@ -82,17 +74,13 @@ export const projects: Project[] = [
     impact: 'Plus de 5 tonnes de déchets plastiques collectés et recyclés.',
     team: [
       {
-        name: 'Seynabou Diouf',
-        role: 'Coordinatrice'
+        name: 'Amadou Cissé',
+        role: 'Chef de Projet'
       },
       {
-        name: 'Mamadou Seck',
-        role: 'Responsable Environnement'
+        name: 'Fatoumata Bintou Rassoul Diallo',
+        role: 'Adjoint Chef de Projet'
       },
-      {
-        name: 'Rokhaya Ndour',
-        role: 'Chargée de Sensibilisation'
-      }
     ],
     sdgs: [
       { number: 12, title: 'Consommation et production responsables', color: '#BF8B2E' },
@@ -115,17 +103,13 @@ export const projects: Project[] = [
     impact: 'Installation de plus de 100 systèmes solaires, bénéficiant à plus de 1000 personnes.',
     team: [
       {
-        name: 'Abdoulaye Kane',
+        name: 'Al Amine Dia',
         role: 'Chef de Projet'
       },
       {
-        name: 'Mariama Sy',
-        role: 'Ingénieure Énergie'
+        name: 'Arame',
+        role: 'Adjoint Chef de Projet'
       },
-      {
-        name: 'Ousmane Gueye',
-        role: 'Technicien'
-      }
     ],
     sdgs: [
       { number: 7, title: 'Énergie propre et d\'un coût abordable', color: '#FCC30B' },

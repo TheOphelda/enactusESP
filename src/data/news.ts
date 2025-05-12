@@ -3,47 +3,30 @@ import { NewsItem } from '../types';
 export const newsItems: NewsItem[] = [
   {
     id: '1',
-    title: 'Conférence Annuelle Enactus ESP',
-    date: '2025-02-15',
-    summary: 'Plus de 100 étudiants se sont réunis pour la conférence annuelle Enactus ESP pour présenter leurs projets et partager leurs idées.',
-    content: 'La conférence annuelle Enactus ESP a rassemblé plus de 100 étudiants de l\'École Supérieure Polytechnique. L\'événement de trois jours a présenté des projets innovants, des ateliers de formation, et des interventions de leaders du secteur. Notre équipe a présenté les avancées du projet Men Nan, recevant des retours précieux et une reconnaissance pour leurs efforts dans l\'agriculture durable.',
-    image: 'https://images.pexels.com/photos/2833037/pexels-photo-2833037.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    title: 'Concours Polytech\'Innovation 2025',
+    date: '2025-04-25',
+    summary: 'Double victoire pour Enactus ESP au concours Polytech\'Innovation 2025 avec ses projets Terrasen et Aquatus.',
+    content: 'Dans le cadre du soixantenaire de l\'Ecole Supérieure Polytechnique, un concours intitulé Polytech\'Innovation a été organisé pour célébrer l\'innovation et l\'entrepreuriat des jeunes. Parmi les dix projets sélectionnés pour participer à cette compétition, deux étaient portés par Enactus ESP. Ces deux projets ont totalement brillé en remportant les deux premières places: Terrasen a remporté le premier prix, Aquatus a remporté le deuxième prix. Une performance exceptionnelle qui témoigne de l\'engagement, de la créativité et du travail sans relâche des membres de Enactus ESP. Félicitations à toute l\'équipe pour cette belle réussite!',
+    image: '/victoire25.jpg',
     category: 'Événements'
   },
   {
     id: '2',
-    title: 'Le Projet Shery Reçoit une Subvention pour l\'Innovation',
-    date: '2025-01-28',
-    summary: 'Notre projet Shery a reçu une subvention de 25 millions FCFA pour étendre son système de filtration d\'eau à cinq nouvelles communautés.',
-    content: 'Nous sommes ravis d\'annoncer que notre projet Shery a obtenu une subvention de 25 millions FCFA du Fonds d\'Innovation pour l\'Eau. Ce financement permettra d\'étendre nos systèmes de filtration d\'eau innovants à cinq communautés supplémentaires, touchant potentiellement plus de 2 000 personnes. La subvention inclut également des ressources pour la formation des techniciens locaux et le suivi de la qualité de l\'eau.',
-    image: 'https://images.pexels.com/photos/1277218/pexels-photo-1277218.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    category: 'Financement'
-  },
-  {
-    id: '3',
-    title: 'Nouveau Partenariat avec Solutions Vertes Sénégal',
-    date: '2025-01-10',
-    summary: 'Enactus ESP a établi un partenariat stratégique avec Solutions Vertes Sénégal pour accélérer le développement de projets d\'énergie durable.',
-    content: 'Enactus ESP est fier d\'annoncer un nouveau partenariat stratégique avec Solutions Vertes Sénégal, leader en technologie d\'énergie renouvelable. Cette collaboration renforcera notre projet Terrasen en fournissant expertise technique, équipement et opportunités de mentorat pour nos membres étudiants. Solutions Vertes Sénégal offrira également des stages aux étudiants Enactus intéressés par une carrière dans les énergies renouvelables.',
-    image: 'https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    category: 'Partenariats'
-  },
-  {
-    id: '4',
-    title: 'L\'Équipe Aquatus Organise une Opération de Nettoyage',
-    date: '2024-12-05',
-    summary: 'Notre projet Aquatus a organisé une opération de nettoyage des plages, retirant plus de 200 kg de déchets plastiques des zones côtières.',
-    content: 'Le week-end dernier, l\'équipe Aquatus a dirigé une opération de nettoyage réussie avec plus de 100 volontaires de la communauté locale. Ensemble, ils ont collecté plus de 200 kg de déchets plastiques et autres débris de nos zones côtières. L\'événement comprenait également des ateliers éducatifs sur la conservation marine et l\'impact de la pollution plastique sur les écosystèmes océaniques.',
-    image: 'https://images.pexels.com/photos/3560168/pexels-photo-3560168.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    title: 'Salon Polytechnicien 2025',
+    date: '2025-04-21',
+    summary: 'Enactus ESP a participé pendant trois jours au Salon Polytechnicien à travers un stand où les produits de ses projets ont été exposés. L’événement a permis de valoriser ses actions, de présenter ses missions et d’échanger avec étudiants, enseignants et visiteurs.',
+    content: 'À l\’occasion du Salon Polytechnicien, Enactus ESP a tenu un stand où étaient exposés les produits issus de ses différents projets. Cet événement a représenté une belle opportunité de valoriser les initiatives entrepreneuriales des étudiants et de faire découvrir leurs réalisations concrètes. Tout au long du salon, les membres d\'Enactus ont pu échanger avec des étudiants, des enseignants et de nombreux visiteurs autour des missions du programme : entreprendre pour impacter durablement. Ces échanges ont permis de renforcer la visibilité de Enactus ESP et de susciter de nouveaux intérêts autour de ses projets à fort impact social et environnemental.',
+    image: '/stand25.jpg',
     category: 'Événements'
   },
   {
-    id: '5',
-    title: 'Le Projet Men Nan s\'Étend à Trois Nouvelles Communautés',
-    date: '2024-11-20',
-    summary: 'Suite à son succès, le projet Men Nan s\'étend maintenant pour servir trois communautés rurales supplémentaires.',
-    content: 'En raison de son impact significatif sur la sécurité alimentaire et l\'autonomisation économique, notre projet Men Nan s\'étend à trois nouvelles communautés rurales. Cette expansion permettra de former environ 150 familles supplémentaires aux techniques agricoles durables et à l\'accès aux marchés pour leurs produits. L\'équipe du projet travaille en étroite collaboration avec les leaders communautaires pour adapter leur approche aux besoins spécifiques de chaque localité.',
-    image: 'https://images.pexels.com/photos/1181605/pexels-photo-1181605.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    category: 'Projets'
-  }
+    id: '3',
+    title: 'Voyage d\'immersion de Mars 2025',
+    date: '2025-03-18',
+    summary: 'Enactus ESP a sillonné cinq localités du Sénégal en mars 2025 pour transférer des technologies, former les bénéficiaires et mesurer l’impact de ses projets sociaux.',
+    content: 'En mars 2025, l’équipe Enactus de l’École Supérieure Polytechnique de Dakar (ESP) a effectué un voyage de transfert de technologie dans plusieurs localités du Sénégal : Ndiedieng et Haafe (Kaolack), Passi (Fatick), Niaguiss (Ziguinchor) et Yeumbeul (Dakar). Ce déplacement, entièrement pris en charge par l’ESP, s’inscrit dans l\'engagement profond d’Enactus ESP à renforcer le pouvoir d’agir des communautés à travers l’entrepreneuriat social. Au cours de ce voyage, l’équipe a mené des immersions dans les localités pour mieux comprendre les réalités de chaque communauté. Elle a également procédé au transfert de technologies issues de projets étudiants, recueilli l’impact des solutions déjà mises en place lors de précédentes missions, et formé les bénéficiaires aux bases du marketing ainsi qu’aux techniques agroalimentaires afin de renforcer leurs compétences et assurer la durabilité des projets. Ce voyage a renforcé l’ambition d’Enactus ESP : former des jeunes acteurs du changement, capables d’agir au plus près des territoires.',
+    image: '/voyage25.jpg',
+    category: 'Voyage'
+  },
+
 ];
