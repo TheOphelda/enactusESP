@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Instagram, Linkedin, Globe, Mail, Phone } from 'lucide-react';
+import { X, Instagram, Linkedin, Youtube, Globe, Mail, Phone } from 'lucide-react';
+import {Tiktok, Snapchat } from 'lucide-react';
+import { Heart } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -11,20 +13,26 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-xl font-semibold mb-4 text-enactus-yellow">Enactus ESP</h3>
             <p className="text-neutral-300 mb-4">
-              Autonomiser les étudiants entrepreneurs pour utiliser l'innovation et les principes entrepreneuriaux pour améliorer le monde.
+              "Be the change you want to see in the world" Mahatma Gandhi.
             </p>
             <div className="flex space-x-4">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-enactus-yellow transition-colors">
-                <Facebook size={20} />
+              <a href="https://tiktok.com/@enactus.esp" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-enactus-yellow transition-colors">
+                <Tiktok size={20} />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-enactus-yellow transition-colors">
-                <Twitter size={20} />
+              <a href="https://x.com/EnactusEsp" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-enactus-yellow transition-colors">
+                <X size={20} />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-enactus-yellow transition-colors">
+              <a href="https://instagram.com/enact.us_polytech" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-enactus-yellow transition-colors">
                 <Instagram size={20} />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-enactus-yellow transition-colors">
+              <a href="https://www.linkedin.com/in/enactus-esp-59899819b" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-enactus-yellow transition-colors">
                 <Linkedin size={20} />
+              </a>
+              <a href="https://snapchat.com/add/enactus_esp" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-enactus-yellow transition-colors">
+                <Snapchat size={20} />
+              </a>
+              <a href="https://youtube.com/@enactusesp" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-enactus-yellow transition-colors">
+                <Youtube size={20} />
               </a>
             </div>
           </div>
@@ -90,6 +98,7 @@ const Footer: React.FC = () => {
         <div className="border-t border-neutral-800 mt-10 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-neutral-400 text-sm">&copy; {new Date().getFullYear()} Enactus ESP. Tous droits réservés.</p>
+             <p className="text-neutral-500 text-xs flex items-center"> Made with <Heart className="mx-1 w-3 h-3 fill-red-500" /> by Enac'coders</p>
             <div className="mt-4 md:mt-0">
               <ul className="flex space-x-4 text-sm">
                 <li>

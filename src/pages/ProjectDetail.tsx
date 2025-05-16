@@ -35,7 +35,7 @@ const ProjectDetail: React.FC = () => {
     return (
       <div className="flex justify-center items-center h-screen">
         <div className="animate-pulse text-center">
-          <p className="text-lg">Loading project...</p>
+          <p className="text-lg">Projet en chargement...</p>
         </div>
       </div>
     );
@@ -61,7 +61,7 @@ const ProjectDetail: React.FC = () => {
             className="flex items-center text-white hover:text-enactus-yellow transition-colors mb-6"
           >
             <ArrowLeft size={20} className="mr-2" />
-            Back to Projects
+            Revenir aux Projets
           </button>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -94,7 +94,7 @@ const ProjectDetail: React.FC = () => {
                   {project.fullDescription}
                 </p>
                 
-                <SectionHeader title="Project Goals" />
+                <SectionHeader title="Objectifs du Projet" />
                 <ul className="space-y-2 mb-8">
                   {project.goals.map((goal, index) => (
                     <motion.li 
@@ -124,7 +124,7 @@ const ProjectDetail: React.FC = () => {
               <div className="bg-neutral-50 rounded-lg p-6 shadow-sm sticky top-20">
                 <h3 className="text-xl font-bold mb-4 flex items-center">
                   <Users size={20} className="mr-2 text-enactus-yellow" />
-                  Project Team
+                  Membres du Projet
                 </h3>
                 <ul className="space-y-4 mb-8">
                   {project.team.map((member, index) => (
@@ -142,7 +142,7 @@ const ProjectDetail: React.FC = () => {
                 
                 <h3 className="text-xl font-bold mb-4 flex items-center">
                   <Target size={20} className="mr-2 text-enactus-yellow" />
-                  SDGs Addressed
+                  ODDs Touchés
                 </h3>
                 <div className="grid grid-cols-3 gap-2 mb-8">
                   {project.sdgs.map(sdg => (
@@ -152,13 +152,13 @@ const ProjectDetail: React.FC = () => {
                 
                 <h3 className="text-xl font-bold mb-4 flex items-center">
                   <Award size={20} className="mr-2 text-enactus-yellow" />
-                  Get Involved
+                  Engagez-vous
                 </h3>
                 <p className="text-neutral-600 mb-4 text-sm">
-                  Interested in supporting this project? There are many ways to contribute, from volunteering to providing resources.
+                  Souhaitez-vous soutenir ce projet ? De nombreuses façons de contribuer sont possibles, du bénévolat à la mise à disposition de ressources..
                 </p>
                 <Button fullWidth>
-                  Contact Us
+                  Contactez-nous
                 </Button>
               </div>
             </div>
@@ -170,8 +170,8 @@ const ProjectDetail: React.FC = () => {
       <section className="py-16 bg-neutral-50">
         <div className="container mx-auto px-4 md:px-6">
           <SectionHeader 
-            title="Other Projects" 
-            subtitle="Explore more of our initiatives"
+            title="Autres Projets" 
+            subtitle="Explorez plus de nos initiatives"
           />
           <div className="grid md:grid-cols-3 gap-8">
             {projects
@@ -201,7 +201,7 @@ const ProjectDetail: React.FC = () => {
                       onClick={() => navigate(`/projects/${p.id}`)}
                       className="text-enactus-yellow hover:text-amber-600 font-medium transition-colors inline-flex items-center"
                     >
-                      Learn more
+                      En savoir plus
                       <ArrowLeft size={16} className="ml-1 transform rotate-180" />
                     </button>
                   </div>

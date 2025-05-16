@@ -26,7 +26,7 @@ const Projects: React.FC = () => {
             transition={{ duration: 0.5 }}
             className="max-w-3xl"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Projects</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Nos Projets</h1>
             <p className="text-xl text-neutral-300">
               Découvrez comment nos projets créent un changement durable et répondent à des défis concrets grâce à des solutions entrepreneuriales innovantes..
             </p>
@@ -63,22 +63,22 @@ const Projects: React.FC = () => {
               <div className="space-y-12">
                 {[
                   {
-                    title: "Identifier",
+                    title: "Ciblage",
                     description: "Nous identifions les défis sociaux, économiques et environnementaux dans les communautés en menant des recherches et en nous engageant directement auprès des parties prenantes..",
                     image: "https://images.pexels.com/photos/6694543/pexels-photo-6694543.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                   },
                   {
-                    title: "Innover",
+                    title: "Immersion",
                     description: "Nos équipes développent des solutions entrepreneuriales qui s'attaquent aux causes profondes des défis identifiés tout en créant une valeur durable..",
                     image: "https://images.pexels.com/photos/7376/startup-photos.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                   },
                   {
-                    title: "Mettre en œuvre",
+                    title: "Transfert de technologie",
                     description: "Nous donnons vie aux solutions grâce à des programmes pilotes, des partenariats et un engagement communautaire, en affinant continuellement notre approche en fonction des retours d'information..",
                     image: "https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                   },
                   {
-                    title: "Impacter",
+                    title: "Impact",
                     description: "Nous mesurons et évaluons le succès de nos projets à travers des indicateurs quantitatifs et qualitatifs, garantissant un changement positif durable dans les communautés.",
                     image: "https://images.pexels.com/photos/6483582/pexels-photo-6483582.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                   }

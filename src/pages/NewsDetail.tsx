@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import { ArrowLeft, Calendar, Tag } from 'lucide-react';
+import { ArrowLeft, Calendar } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 import PageTransition from '../components/ui/PageTransition';
@@ -45,7 +45,7 @@ const NewsDetail: React.FC = () => {
     return (
       <div className="flex justify-center items-center h-screen">
         <div className="animate-pulse text-center">
-          <p className="text-lg">Loading article...</p>
+          <p className="text-lg">Chargement de l'article...</p>
         </div>
       </div>
     );
@@ -87,7 +87,7 @@ const NewsDetail: React.FC = () => {
             className="flex items-center text-white hover:text-enactus-yellow transition-colors mb-6"
           >
             <ArrowLeft size={20} className="mr-2" />
-            Back to News
+            Retour aux actualités
           </button>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -136,7 +136,7 @@ const NewsDetail: React.FC = () => {
             <div className="mt-12 border-t border-b border-neutral-200 py-6">
               <div className="flex flex-wrap justify-between items-center">
                 <div className="text-neutral-600">
-                  Share this article:
+                  Partager cet article:
                 </div>
                 <div className="flex space-x-4">
                   <a href="#" className="text-neutral-600 hover:text-enactus-yellow transition-colors">Twitter</a>
@@ -155,8 +155,8 @@ const NewsDetail: React.FC = () => {
         <section className="py-16 bg-neutral-50">
           <div className="container mx-auto px-4 md:px-6">
             <SectionHeader 
-              title="Related News" 
-              subtitle="You might also be interested in these articles"
+              title="Nouvelles connexes" 
+              subtitle="Ces articles pourraient également vous intéresser"
             />
             <div className="grid md:grid-cols-3 gap-8">
               {relatedNews.map((item, index) => (

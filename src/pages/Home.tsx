@@ -55,7 +55,7 @@ const Home: React.FC = () => {
                 </span>
               </h1>
               <p className="text-xl md:text-2xl text-neutral-300 mb-10 leading-relaxed max-w-2xl">
-                Empowering our society is our priority. Join us in creating sustainable impact through entrepreneurial action.
+                Empowering our society is our priority. Rejoignez-nous pour créer un impact durable grâce à l'action entrepreneuriale.
               </p>
               <div className="flex flex-wrap gap-6">
                 <Link to="/projects">
@@ -144,14 +144,14 @@ const Home: React.FC = () => {
             <div className="text-center mb-16">
               <SectionHeader 
                 title="Notre Impact" 
-                subtitle="Creating sustainable change across communities worldwide" 
+                subtitle="Créer un changement durable dans les communautés urbaines et rurales" 
                 centered
               />
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
-                { icon: Globe, value: aboutData.impact.countries, label: "Pays" },
-                { icon: Briefcase, value: aboutData.impact.universities.toLocaleString(), label: "Universités" },
+                { icon: Globe, value: aboutData.impact.countries, label: "Localités" },
+                { icon: Briefcase, value: aboutData.impact.universities.toLocaleString(), label: "GIE" },
                 { icon: Users, value: aboutData.impact.students.toLocaleString(), label: "Etudiants" },
                 { icon: Target, value: aboutData.impact.projects.toLocaleString(), label: "Projets" }
               ].map((stat, index) => (
@@ -191,7 +191,7 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-4 md:px-6">
           <SectionHeader 
             title="Nos Projets" 
-            subtitle="Innovative solutions addressing social and environmental challenges" 
+            subtitle="Des solutions innovantes répondant aux défis sociaux et environnementaux" 
             centered
           />
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
@@ -226,8 +226,8 @@ const Home: React.FC = () => {
       <section className="py-24 bg-neutral-900 text-white">
         <div className="container mx-auto px-4 md:px-6">
           <SectionHeader 
-            title="Sustainable Development Goals" 
-            subtitle="Our work contributes to these UN SDGs" 
+            title="Objectifs de Développement Durables" 
+            subtitle="Notre travail contribue à ces ODDs" 
             centered
             dark
           />
@@ -266,7 +266,7 @@ const Home: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              Que tu sois étudiant, entrepreneur ou chef d'entreprise, il y'a beaucoup de moyens de participer aux activités de Enactus.
+              Étudiants engagés, professionnels impliqués : rejoignez Enactus et agissons ensemble pour un monde meilleur !
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}

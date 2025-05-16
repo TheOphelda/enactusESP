@@ -48,8 +48,8 @@ const News: React.FC = () => {
       <section className="py-20 bg-neutral-50">
         <div className="container mx-auto px-4 md:px-6">
           <SectionHeader 
-            title="News & Updates" 
-            subtitle="Latest happenings from our teams and projects"
+            title="Actualités et Annonces" 
+            subtitle="Les derniers événements de nos équipes et projets"
           />
           
           {/* Category Filter */}
@@ -79,7 +79,7 @@ const News: React.FC = () => {
               ))
             ) : (
               <div className="col-span-full text-center py-12">
-                <p className="text-neutral-500 text-lg">No news items found for this category.</p>
+                <p className="text-neutral-500 text-lg">Aucun élément d'actualité trouvé pour cette catégorie.</p>
               </div>
             )}
           </div>
