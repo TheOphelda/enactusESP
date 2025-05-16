@@ -1,10 +1,10 @@
 export const aboutData = {
-  mission: "Enactus ESP est une organisation étudiante qui développe des projets entrepreneuriaux à fort impact social au sein de l'École Supérieure Polytechnique.",
+  mission: "Notre mission est d\'inciter les étudiants de l\’ESP à utiliser l\'esprit d\'entreprise et d\'innovation pour bâtir un monde meilleur. Nous mettons l\'accent sur l\'apprentissage par l\'expérience, qui catalyse la croissance personnelle et le développement professionnel de nos membres par la création de projets concrets qui améliorent les conditions de vies de nos communautés et qui surtout visent à rendre notre société meilleur. ",
   vision: "Créer un impact positif et durable dans nos communautés à travers l'entrepreneuriat social étudiant.",
   values: [
     {
-      title: "Entrepreneuriat Social",
-      description: "Nous cultivons l'esprit d'entrepreneuriat social chez les étudiants pour créer un impact positif."
+      title: "Esprit d'équipe",
+      description: "nous mettons en avant l'esprit de famille en nous investissant de manière collective, en conjuguant nos compétences diverses et en créant une forte synergie."
     },
     {
       title: "Intégrité",
@@ -12,28 +12,28 @@ export const aboutData = {
     },
     {
       title: "Excellence",
-      description: "Nous visons l'excellence dans tous nos projets et initiatives."
+      description: "nous nous engageons à relever le défi de l’excellence, et nous recherchons la perfection dans toutes nos actions ."
     },
     {
       title: "Engagement",
-      description: "Nous nous engageons pleinement dans nos projets pour créer un changement durable."
+      description: "Nous nous engageons pleinement dans nos projets pour satisfaire les besoins de nos communautés cibles et créer un changement durable."
     }
   ],
   approach: "Enactus ESP encourage les étudiants à développer des projets entrepreneuriaux qui répondent aux défis sociaux, environnementaux et économiques de nos communautés.",
   impact: {
-    livesImpacted: "150 000",
-    jobsCreated: "200",
-    peopleTrained: "1 579",
-    workHours: "36 640",
-    products: "39",
-    revenueIncrease: "77%",
-    revenue: "173 193",
-    distanceCovered: "8 949",
-    countries: 37,
+    viesTouchées: "150 000",
+    emploisCréés: "200",
+    personnesFormées: "1 579",
+    heuresDeTravail: "36 640",
+    produits: "39",
+    augmentationDeRevenus: "77%",
+    revenus: "173 193 $",
+    distanceParcourue: "8 949",
+    /*countries: 37,
     universities: 1800,
     students: 72000,
     projects: 3200,
-    peopleImpacted: "1.3M"
+    peopleImpacted: "1.3M"*/
   },
   sdgs: [
     { number: 1, title: "Pas de pauvreté", color: "#E5243B" },
