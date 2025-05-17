@@ -14,7 +14,7 @@ const Projects: React.FC = () => {
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: "url('https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1600')",
+              backgroundImage: "url('mareme ada table.jpg')",
               opacity: 0.3
             }}
           ></div>
@@ -65,22 +65,22 @@ const Projects: React.FC = () => {
                   {
                     title: "Ciblage",
                     description: "Nous identifions les défis sociaux, économiques et environnementaux dans les communautés en menant des recherches et en nous engageant directement auprès des parties prenantes..",
-                    image: "https://images.pexels.com/photos/6694543/pexels-photo-6694543.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    image: "/Goums femmes.jpg"
                   },
                   {
                     title: "Immersion",
-                    description: "Nos équipes développent des solutions entrepreneuriales qui s'attaquent aux causes profondes des défis identifiés tout en créant une valeur durable..",
-                    image: "https://images.pexels.com/photos/7376/startup-photos.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    description: "Nous prenons le temps de faire de minis séjours durant nos voyages auprès de nos cibles pour mieux comprendre leurs besoins et pouvoir les satisfaire.",
+                    image: "/immersion.jpg"
                   },
                   {
                     title: "Transfert de technologie",
-                    description: "Nous donnons vie aux solutions grâce à des programmes pilotes, des partenariats et un engagement communautaire, en affinant continuellement notre approche en fonction des retours d'information..",
-                    image: "https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    description: "Notre équipe développe des solutions entrepreneuriales qui s'attaquent aux causes profondes des défis ciblés tout en créant une valeur durable.",
+                    image: "/transfert.jpg"
                   },
                   {
                     title: "Impact",
                     description: "Nous mesurons et évaluons le succès de nos projets à travers des indicateurs quantitatifs et qualitatifs, garantissant un changement positif durable dans les communautés.",
-                    image: "https://images.pexels.com/photos/6483582/pexels-photo-6483582.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    image: "/Terasen enfant.jpg"
                   }
                 ].map((step, index) => (
                   <motion.div 

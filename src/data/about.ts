@@ -29,10 +29,10 @@ export const aboutData = {
     augmentationDeRevenus: "77%",
     revenus: "173 193 $",
     distanceParcourue: "8 949",
+    projets: 8,
     /*countries: 37,
     universities: 1800,
     students: 72000,
-    projects: 3200,
     peopleImpacted: "1.3M"*/
   },
   sdgs: [

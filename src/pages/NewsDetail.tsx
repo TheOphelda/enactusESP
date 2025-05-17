@@ -139,10 +139,12 @@ const NewsDetail: React.FC = () => {
                   Partager cet article:
                 </div>
                 <div className="flex space-x-4">
-                  <a href="#" className="text-neutral-600 hover:text-enactus-yellow transition-colors">Twitter</a>
-                  <a href="#" className="text-neutral-600 hover:text-enactus-yellow transition-colors">Facebook</a>
-                  <a href="#" className="text-neutral-600 hover:text-enactus-yellow transition-colors">LinkedIn</a>
-                  <a href="#" className="text-neutral-600 hover:text-enactus-yellow transition-colors">Email</a>
+                  <a href="https://x.com/EnactusEsp" className="text-neutral-600 hover:text-enactus-yellow transition-colors">X</a>
+                  <a href="https://instagram.com/enact.us_polytech" className="text-neutral-600 hover:text-enactus-yellow transition-colors">Instagram</a>
+                  <a href="https://www.linkedin.com/in/enactus-esp-59899819b" className="text-neutral-600 hover:text-enactus-yellow transition-colors">LinkedIn</a>
+                  <a href="https://www.tiktok.com/@enactus.esp" className="text-neutral-600 hover:text-enactus-yellow transition-colors">Tiktok</a>
+                  <a href="https://snapchat.com/add/enactus_esp" className="text-neutral-600 hover:text-enactus-yellow transition-colors">Snapchat</a>
+                  <a href="mailto:enactus.esp@gmail.com" className="text-neutral-600 hover:text-enactus-yellow transition-colors">Email</a>
                 </div>
               </div>
             </div>

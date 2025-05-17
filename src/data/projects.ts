@@ -17,12 +17,12 @@ export const projects: Project[] = [
   
     team: [
       {
-        name: 'Khabane',
+        name: 'Modou Khabane Sambe',
         role: 'Chef de Projet'
       },
       {
-        name: 'Aminata Sow',
-        role: 'Adjoint Chef de Projet'
+        name: 'Fatou Tambedou',
+        role: 'Adjointe Chef de Projet'
       },
     ],
     sdgs: [
@@ -49,7 +49,7 @@ export const projects: Project[] = [
     impact: 'Plus de 8 000 personnes touchées par le Shery Talk sur Instagram.',
     team: [
       {
-        name: 'Laeticia',
+        name: 'Marianne Laeticia Coura Faye',
         role: 'Chef de Projet'
       },
       {
@@ -79,7 +79,7 @@ export const projects: Project[] = [
       'Conservation et exploitation de manière durable des océans, mers et ressources halieutiques',
       'Gestion durable des ressources en eau'
     ],
-    impact: 'Plus de 5 tonnes de déchets plastiques collectés et recyclés.',
+    impact: 'Réduction de manière significative les besoins en eau et en énergie, tout en produisant des aliments de haute qualité.',
     team: [
       {
         name: 'Amadou Cissé',
@@ -87,7 +87,7 @@ export const projects: Project[] = [
       },
       {
         name: 'Fatoumata Bintou Rassoul Diallo',
-        role: 'Adjoint Chef de Projet'
+        role: 'Adjointe Chef de Projet'
       },
     ],
     sdgs: [
@@ -111,14 +111,14 @@ export const projects: Project[] = [
       'Développement économique local',
       'Création d\'emplois dans la transformation et la distribution'
     ],
-    impact: 'Installation de plus de 100 systèmes solaires, bénéficiant à plus de 1000 personnes.',
+    impact: 'Réalisation de 4 transferts de technologie, bénéficiant à plus de 50 femmes.',
     team: [
       {
-        name: 'Al Amine Dia',
+        name: 'Mouhamed Al Amine Dia',
         role: 'Chef de Projet'
       },
       {
-        name: 'Arame',
+        name: 'Ousseynou Boye',
         role: 'Adjoint Chef de Projet'
       },
     ],

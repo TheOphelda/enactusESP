@@ -107,7 +107,7 @@ const Home: React.FC = () => {
               </div>
               <div className="mt-10">
                 <Link to="/contact" className="inline-flex items-center text-enactus-yellow hover:text-amber-600 font-medium transition-colors group">
-                  Join our mission 
+                  Rejoins notre mission 
                   <ArrowRight size={20} className="ml-2 transition-transform duration-300 group-hover:translate-x-2" />
                 </Link>
               </div>
@@ -150,10 +150,10 @@ const Home: React.FC = () => {
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
-                { icon: Globe, value: aboutData.impact.countries, label: "Localités" },
-                { icon: Briefcase, value: aboutData.impact.universities.toLocaleString(), label: "GIE" },
-                { icon: Users, value: aboutData.impact.students.toLocaleString(), label: "Etudiants" },
-                { icon: Target, value: aboutData.impact.projects.toLocaleString(), label: "Projets" }
+                { icon: Globe, value: aboutData.impact.distanceParcourue, label: "Distance parcourue" },
+                { icon: Briefcase, value: aboutData.impact.emploisCréés.toLocaleString(), label: "Emplois Créés" },
+                { icon: Users, value: aboutData.impact.viesTouchées.toLocaleString(), label: "Vies impactées" },
+                { icon: Target, value: aboutData.impact.projets.toLocaleString(), label: "Projets" }
               ].map((stat, index) => (
                 <motion.div 
                   key={index}
@@ -179,7 +179,7 @@ const Home: React.FC = () => {
             >
               <div className="bg-white/90 p-8 rounded-xl inline-block shadow-lg">
                 <p className="text-2xl font-semibold mb-3">Personnes touchées:</p>
-                <p className="text-5xl font-bold text-enactus-yellow">{aboutData.impact.peopleImpacted}+</p>
+                <p className="text-5xl font-bold text-enactus-yellow">{aboutData.impact.viesTouchées}+</p>
               </div>
             </motion.div>
           </div>
@@ -279,7 +279,7 @@ const Home: React.FC = () => {
                   variant="outline" 
                   className="border-black text-black hover:bg-black hover:text-enactus-yellow transition-colors group"
                 >
-                  Get Involved Today
+                  Stay tuned!
                   <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
                 </Button>
               </Link>

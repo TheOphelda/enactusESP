@@ -86,7 +86,7 @@ const Contact: React.FC = () => {
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: "url('https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
+              backgroundImage: "url('/IMG_8167.jpg')",
               opacity: 0.3
             }}
           ></div>
@@ -239,7 +239,7 @@ const Contact: React.FC = () => {
                           ? 'border-red-300 focus:ring-red-200' 
                           : 'border-neutral-300 focus:ring-enactus-yellow/30 focus:border-enactus-yellow'
                       }`}
-                      placeholder="john@example.com"
+                      placeholder="matar@example.com"
                     />
                     {errors.email && (
                       <p className="mt-1 text-sm text-red-500">{errors.email}</p>
@@ -362,7 +362,7 @@ const Contact: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              Vous êtes passionné par l'entrepreneuriat et l'impact social ? Nous recherchons toujours des étudiants dévoués pour rejoindre nos projets.
+              Vous êtes passionné par l'entrepreneuriat et l'impact social ? Nous recherchons toujours des étudiants dévoués pour rejoindre nos projets. Restez à l'affût pour le prochain recrutement!
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}

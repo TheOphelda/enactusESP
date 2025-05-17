@@ -106,7 +106,7 @@ const News: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              Abonnez-vous à notre newsletter pour recevoir les dernières nouvelles et mises à jour de Enactus ESP..
+              Abonnez-vous à nos différentes plateformes pour recevoir les dernières nouvelles et mises à jour de Enactus ESP..
             </motion.p>
             <motion.div
               className="flex flex-col sm:flex-row gap-3 justify-center"
@@ -117,7 +117,7 @@ const News: React.FC = () => {
             >
               <input
                 type="email"
-                placeholder="Enter your email"
+                placeholder="Entrez votre email"
                 className="px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-neutral-900 flex-grow max-w-md"
               />
               <button className="px-6 py-3 bg-neutral-900 text-white rounded-md hover:bg-neutral-800 transition-colors font-medium">
