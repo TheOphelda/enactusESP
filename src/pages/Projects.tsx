@@ -57,7 +57,7 @@ const Projects: React.FC = () => {
             
             <div className="mt-8 relative">
               {/* Timeline line */}
-              <div className="absolute left-6 top-0 bottom-0 w-1 bg-enactus-yellow rounded hidden md:block"></div>
+              <div className="absolute left-6 top-0 bottom-0 w-1 bg-[#FFC220] rounded hidden md:block"></div>
               
               {/* Steps */}
               <div className="space-y-12">
@@ -93,7 +93,7 @@ const Projects: React.FC = () => {
                   >
                     {/* Timeline dot for desktop */}
                     <div className="hidden md:flex md:col-span-1 justify-center">
-                      <div className="w-12 h-12 bg-enactus-yellow rounded-full flex items-center justify-center text-neutral-900 font-bold text-xl">
+                      <div className="w-12 h-12 bg-[#FFC220] rounded-full flex items-center justify-center text-neutral-900 font-bold text-xl">
                         {index + 1}
                       </div>
                     </div>
@@ -101,7 +101,7 @@ const Projects: React.FC = () => {
                     {/* Content */}
                     <div className={`md:col-span-3 ${index % 2 === 0 ? 'md:order-2' : ''}`}>
                       <div className="flex md:hidden items-center gap-4 mb-4">
-                        <div className="w-10 h-10 bg-enactus-yellow rounded-full flex items-center justify-center text-neutral-900 font-bold">
+                        <div className="w-10 h-10 bg-[#FFC220] rounded-full flex items-center justify-center text-neutral-900 font-bold">
                           {index + 1}
                         </div>
                         <h3 className="text-2xl font-bold">{step.title}</h3>
