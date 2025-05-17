@@ -14,7 +14,7 @@ const Projects: React.FC = () => {
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: "url('mareme ada table.jpg')",
+              backgroundImage: "url('/mareme ada table.jpg')",
               opacity: 0.3
             }}
           ></div>
