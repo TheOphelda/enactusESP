@@ -86,7 +86,7 @@ export const projects: Project[] = [
         role: 'Chef de Projet'
       },
       {
-        name: 'Fatoumata Bintou Rassoul Diallo',
+        name: 'Fatoumata Binetou Rassoul Diallo',
         role: 'Adjointe Chef de Projet'
       },
     ],
