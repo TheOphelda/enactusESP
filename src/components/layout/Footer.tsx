@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-xl font-semibold mb-4 text-enactus-yellow">Enactus ESP</h3>
             <p className="text-neutral-300 mb-4">
-              "Be the change you want to see in the world" Mahatma Gandhi.
+              "Be the change you want to see in the world"  Mahatma Gandhi.
             </p>
             <div className="flex space-x-4">
               <a href="https://tiktok.com/@enactus.esp" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-enactus-yellow transition-colors">
