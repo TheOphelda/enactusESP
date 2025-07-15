@@ -138,7 +138,7 @@ const Home: React.FC = () => {
 
       {/* Impact Stats Section - Améliorée */}
       <section className="py-24 bg-enactus-yellow relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-10"></div>
+        <div className="absolute inset-0 bg-[url('/cover.png')] opacity-10"></div>
         <div className="container mx-auto px-4 md:px-6 relative">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
@@ -249,7 +249,7 @@ const Home: React.FC = () => {
 
       {/* CTA Section - Améliorée */}
       <section className="py-24 bg-gradient-to-r from-amber-500 to-enactus-yellow text-neutral-900 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-10"></div>
+        <div className="absolute inset-0 bg-[url('/cover.png')] opacity-10"></div>
         <div className="container mx-auto px-4 md:px-6 relative">
           <div className="max-w-4xl mx-auto text-center">
             <motion.h2 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { X, Instagram, Linkedin, Youtube, Globe, Mail, Phone } from 'lucide-react';
-import {Tiktok, Snapchat } from 'lucide-react';
+
 import { Heart } from 'lucide-react';
 
 const Footer: React.FC = () => {
@@ -16,9 +16,7 @@ const Footer: React.FC = () => {
               "Be the change you want to see in the world"  Mahatma Gandhi.
             </p>
             <div className="flex space-x-4">
-              <a href="https://tiktok.com/@enactus.esp" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-enactus-yellow transition-colors">
-                <Tiktok size={20} />
-              </a>
+              
               <a href="https://x.com/EnactusEsp" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-enactus-yellow transition-colors">
                 <X size={20} />
               </a>
@@ -28,9 +26,7 @@ const Footer: React.FC = () => {
               <a href="https://www.linkedin.com/in/enactus-esp-59899819b" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-enactus-yellow transition-colors">
                 <Linkedin size={20} />
               </a>
-              <a href="https://snapchat.com/add/enactus_esp" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-enactus-yellow transition-colors">
-                <Snapchat size={20} />
-              </a>
+              
               <a href="https://youtube.com/@enactusesp" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-enactus-yellow transition-colors">
                 <Youtube size={20} />
               </a>
