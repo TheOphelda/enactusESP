@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Users, Target, Award } from 'lucide-react';
 import { motion } from 'framer-motion';
+import BackToTop from '../components/ui/BackToTop';
 
 import PageTransition from '../components/ui/PageTransition';
 import SectionHeader from '../components/ui/SectionHeader';
@@ -75,7 +76,7 @@ const ProjectDetail: React.FC = () => {
             </p>
             <div className="flex flex-wrap gap-3">
               {project.sdgs.map(sdg => (
-                <SDGBadge key={sdg.number} sdg={sdg} showTitle />
+                <SDGBadge key={sdg.sdg.number} sdg={sdg} showTitle />
               ))}
             </div>
           </motion.div>
@@ -146,7 +147,7 @@ const ProjectDetail: React.FC = () => {
                 </h3>
                 <div className="grid grid-cols-3 gap-2 mb-8">
                   {project.sdgs.map(sdg => (
-                    <SDGBadge key={sdg.number} sdg={sdg} size="sm" />
+                    <SDGBadge key={sdg.sdg.number} sdg={sdg} size="sm" />
                   ))}
                 </div>
                 
@@ -210,6 +211,7 @@ const ProjectDetail: React.FC = () => {
           </div>
         </div>
       </section>
+      <BackToTop />
     </PageTransition>
   );
 };

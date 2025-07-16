@@ -20,6 +20,7 @@ export interface SDG {
   number: number;
   title: string;
   color: string;
+  image: string;
 }
 
 export interface NewsItem {

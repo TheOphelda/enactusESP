@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { ArrowLeft, Calendar } from 'lucide-react';
 import { motion } from 'framer-motion';
+import BackToTop from '../components/ui/BackToTop';
 
 import PageTransition from '../components/ui/PageTransition';
 import SectionHeader from '../components/ui/SectionHeader';
@@ -202,6 +203,7 @@ const NewsDetail: React.FC = () => {
           </div>
         </section>
       )}
+      <BackToTop />
     </PageTransition>
   );
 };

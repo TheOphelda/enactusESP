@@ -4,7 +4,7 @@ export const aboutData = {
   values: [
     {
       title: "Esprit d'équipe",
-      description: "nous mettons en avant l'esprit de famille en nous investissant de manière collective, en conjuguant nos compétences diverses et en créant une forte synergie."
+      description: "Nous mettons en avant l'esprit de famille en nous investissant de manière collective, en conjuguant nos compétences diverses et en créant une forte synergie."
     },
     {
       title: "Intégrité",
@@ -12,7 +12,7 @@ export const aboutData = {
     },
     {
       title: "Excellence",
-      description: "nous nous engageons à relever le défi de l’excellence, et nous recherchons la perfection dans toutes nos actions ."
+      description: "Nous nous engageons à relever le défi de l’excellence, et nous recherchons la perfection dans toutes nos actions."
     },
     {
       title: "Engagement",
@@ -36,15 +36,15 @@ export const aboutData = {
     peopleImpacted: "1.3M"*/
   },
   sdgs: [
-    { number: 1, title: "Pas de pauvreté", color: "#E5243B" },
-    { number: 2, title: "Faim « zéro »", color: "#DDA63A" },
-    { number: 3, title: "Bonne santé et bien-être", color: "#4C9F38" },
-    { number: 4, title: "Éducation de qualité", color: "#C5192D" },
-    { number: 5, title: "Égalité entre les sexes", color: "#FF3A21" },
-    { number: 8, title: "Travail décent et croissance économique", color: "#A21942" },
-    { number: 10, title: "Inégalités réduites", color: "#DD1367" },
-    { number: 12, title: "Consommation et production responsables", color: "#BF8B2E" },
-    { number: 15, title: "Vie terrestre", color: "#56C02B" },
-    { number: 17, title: "Partenariats pour la réalisation des objectifs", color: "#19486A" }
+    { number: 1, title: "Pas de pauvreté", color: "#E5243B", image: "/odds/odd1.png" },
+    { number: 2, title: "Faim « zéro »", color: "#DDA63A", image: "/odds/odd2.png" },
+    { number: 3, title: "Bonne santé et bien-être", color: "#4C9F38", image: "/odds/odd3.png" },
+    { number: 4, title: "Éducation de qualité", color: "#C5192D", image: "/odds/odd4.png" },
+    { number: 5, title: "Égalité entre les sexes", color: "#FF3A21", image: "/odds/odd5.png" },
+    { number: 8, title: "Travail décent et croissance économique", color: "#A21942", image: "/odds/odd8.png" },
+    { number: 10, title: "Inégalités réduites", color: "#DD1367", image: "/odds/odd10.png" },
+    { number: 12, title: "Consommation et production responsables", color: "#BF8B2E", image: "/odds/odd12.png" },
+    { number: 15, title: "Vie terrestre", color: "#56C02B", image: "/odds/odd15.png" },
+    { number: 17, title: "Partenariats pour la réalisation des objectifs", color: "#19486A", image: "/odds/odd17.png" }
   ]
 };

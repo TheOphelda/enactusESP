@@ -1,4 +1,5 @@
 import React from 'react';
+import BackToTop from '../components/ui/BackToTop';
 import PageTransition from '../components/ui/PageTransition';
 import SectionHeader from '../components/ui/SectionHeader';
 import ProjectCard from '../components/ui/ProjectCard';
@@ -28,7 +29,7 @@ const Projects: React.FC = () => {
           >
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Nos Projets</h1>
             <p className="text-xl text-neutral-300">
-              Découvrez comment nos projets créent un changement durable et répondent à des défis concrets grâce à des solutions entrepreneuriales innovantes..
+              Découvrez comment nos projets créent un changement durable et répondent à des défis concrets grâce à des solutions entrepreneuriales innovantes.
             </p>
           </motion.div>
         </div>
@@ -125,6 +126,7 @@ const Projects: React.FC = () => {
           </div>
         </div>
       </section>
+      <BackToTop />
     </PageTransition>
   );
 };

@@ -3,9 +3,11 @@ import { MapPin, Mail, Phone, Send, CheckCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 import PageTransition from '../components/ui/PageTransition';
+import BackToTop from '../components/ui/BackToTop';
 import SectionHeader from '../components/ui/SectionHeader';
 import Button from '../components/ui/Button';
 import { ContactFormData } from '../types';
+
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState<ContactFormData>({
@@ -14,43 +16,30 @@ const Contact: React.FC = () => {
     subject: '',
     message: ''
   });
-  
   const [errors, setErrors] = useState<Partial<ContactFormData>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  
+
   const validateForm = (): boolean => {
     const newErrors: Partial<ContactFormData> = {};
-    
-    if (!formData.name.trim()) {
-      newErrors.name = 'Le nom est requis';
-    }
-    
+    if (!formData.name.trim()) newErrors.name = 'Le nom est requis';
     if (!formData.email.trim()) {
       newErrors.email = "L'email est requis";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = "L'email est invalide";
     }
-    
-    if (!formData.subject.trim()) {
-      newErrors.subject = 'Le sujet est requis';
-    }
-    
-    if (!formData.message.trim()) {
-      newErrors.message = 'Le message est requis';
-    }
-    
+    if (!formData.subject.trim()) newErrors.subject = 'Le sujet est requis';
+    if (!formData.message.trim()) newErrors.message = 'Le message est requis';
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
-  
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
-    
     if (errors[name as keyof ContactFormData]) {
       setErrors(prev => ({
         ...prev,
@@ -58,23 +47,34 @@ const Contact: React.FC = () => {
       }));
     }
   };
-  
-  const handleSubmit = (e: React.FormEvent) => {
+
+  // Remplacer par votre endpoint Formspree (ex: https://formspree.io/f/xxxxxxx)
+  const FORMSPREE_ENDPOINT = "https://formspree.io/f/your_form_id";
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    if (validateForm()) {
-      setIsSubmitting(true);
-      
-      setTimeout(() => {
-        setIsSubmitting(false);
+    if (!validateForm()) return;
+    setIsSubmitting(true);
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message
+        })
+      });
+      if (response.ok) {
         setIsSubmitted(true);
-        setFormData({
-          name: '',
-          email: '',
-          subject: '',
-          message: ''
-        });
-      }, 1500);
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        alert("Erreur lors de l'envoi. Veuillez réessayer.");
+      }
+    } catch (err) {
+      alert("Erreur lors de l'envoi. Veuillez réessayer.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -116,18 +116,16 @@ const Contact: React.FC = () => {
                 title="Prenez Contact" 
                 subtitle="Nous sommes là pour répondre à toutes vos questions" 
               />
-              
               <div className="space-y-6 mt-8">
                 <div className="flex items-start">
                   <div className="bg-neutral-100 p-3 rounded-full mr-4">
                     <MapPin className="text-enactus-yellow" size={24} />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold mb-1">Notre Localisation</h3>
+                    <h3 className="text-lg font-semibold mb-1">Localisation</h3>
                     <p className="text-neutral-600">École Supérieure Polytechnique de Dakar</p>
                   </div>
                 </div>
-                
                 <div className="flex items-start">
                   <div className="bg-neutral-100 p-3 rounded-full mr-4">
                     <Mail className="text-enactus-yellow" size={24} />
@@ -137,18 +135,16 @@ const Contact: React.FC = () => {
                     <a href="mailto:enactus.esp@gmail.com" className="text-neutral-600 hover:text-enactus-yellow transition-colors">enactus.esp@gmail.com</a>
                   </div>
                 </div>
-                
                 <div className="flex items-start">
                   <div className="bg-neutral-100 p-3 rounded-full mr-4">
                     <Phone className="text-enactus-yellow" size={24} />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-1">Téléphone</h3>
-                    <a href="tel:+221781234567" className="text-neutral-600 hover:text-enactus-yellow transition-colors">+221 78 123 45 67</a>
+                    <a href="tel:+221781234567" className="text-neutral-600 hover:text-enactus-yellow transition-colors">+221 78 010 30 50</a>
                   </div>
                 </div>
               </div>
-              
               <div className="mt-12">
                 <h3 className="text-xl font-semibold mb-4">Suivez-nous</h3>
                 <div className="flex space-x-4">
@@ -172,14 +168,12 @@ const Contact: React.FC = () => {
                 </div>
               </div>
             </div>
-            
             {/* Contact Form */}
             <div>
               <SectionHeader 
                 title="Envoyez-nous un Message" 
                 subtitle="Remplissez le formulaire ci-dessous et nous vous répondrons rapidement" 
               />
-              
               {isSubmitted ? (
                 <motion.div 
                   initial={{ opacity: 0, scale: 0.9 }}
@@ -217,13 +211,12 @@ const Contact: React.FC = () => {
                           ? 'border-red-300 focus:ring-red-200' 
                           : 'border-neutral-300 focus:ring-enactus-yellow/30 focus:border-enactus-yellow'
                       }`}
-                      placeholder="John Doe"
+                      placeholder="Matar Fall"
                     />
                     {errors.name && (
                       <p className="mt-1 text-sm text-red-500">{errors.name}</p>
                     )}
                   </div>
-                  
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-neutral-700 mb-1">
                       Adresse Email <span className="text-red-500">*</span>
@@ -245,7 +238,6 @@ const Contact: React.FC = () => {
                       <p className="mt-1 text-sm text-red-500">{errors.email}</p>
                     )}
                   </div>
-                  
                   <div>
                     <label htmlFor="subject" className="block text-sm font-medium text-neutral-700 mb-1">
                       Sujet <span className="text-red-500">*</span>
@@ -267,7 +259,6 @@ const Contact: React.FC = () => {
                       <p className="mt-1 text-sm text-red-500">{errors.subject}</p>
                     )}
                   </div>
-                  
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-neutral-700 mb-1">
                       Message <span className="text-red-500">*</span>
@@ -289,7 +280,6 @@ const Contact: React.FC = () => {
                       <p className="mt-1 text-sm text-red-500">{errors.message}</p>
                     )}
                   </div>
-                  
                   <div>
                     <Button 
                       type="submit" 
@@ -320,28 +310,54 @@ const Contact: React.FC = () => {
           </div>
         </div>
       </section>
-      
       {/* Map Section */}
-      <section className="py-16 bg-neutral-50">
+      <motion.section
+        className="py-16 bg-neutral-50"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+      >
         <div className="container mx-auto px-4 md:px-6">
           <SectionHeader 
             title="Visitez-nous" 
             subtitle="Retrouvez-nous sur le campus"
             centered
           />
-          
-          <div className="mt-8 h-96 rounded-lg overflow-hidden shadow-md">
-            <div className="w-full h-full bg-neutral-200 flex items-center justify-center">
-              <div className="text-center">
-                <MapPin size={48} className="mx-auto text-enactus-yellow mb-3" />
-                <h3 className="text-xl font-semibold mb-1">Enactus ESP</h3>
-                <p className="text-neutral-600">École Supérieure Polytechnique de Dakar</p>
-              </div>
-            </div>
-          </div>
+          <motion.div
+            className="mt-8 h-96 rounded-lg overflow-hidden shadow-md"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
+            <iframe
+              title="Carte ESP Dakar (Google Maps)"
+              src="https://www.google.com/maps?q=Ecole+Supérieure+Polytechnique+Dakar&output=embed"
+              className="w-full h-full border-0"
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </motion.div>
+          <motion.div
+            className="text-center mt-2"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <a
+              href="https://www.google.com/maps/place/Ecole+Supérieure+Polytechnique+Dakar/@14.6935,-17.4670,17z"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-enactus-yellow underline hover:text-amber-500"
+            >
+              Voir sur Google Maps
+            </a>
+          </motion.div>
         </div>
-      </section>
-      
+      </motion.section>
       {/* Join Us CTA */}
       <section className="py-16 bg-enactus-yellow">
         <div className="container mx-auto px-4 md:px-6">
@@ -389,8 +405,9 @@ const Contact: React.FC = () => {
           </div>
         </div>
       </section>
+      <BackToTop />
     </PageTransition>
   );
-};
+}
 
 export default Contact;
