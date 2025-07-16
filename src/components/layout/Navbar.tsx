@@ -11,8 +11,9 @@ const navItems: NavItem[] = [
     label: 'Projets', 
     path: '/projects',
     children: [
-      { label: 'Men Nan', path: '/projects/men-nan' },
+      
       { label: 'Shery', path: '/projects/shery' },
+      { label: 'Men-Nan', path: '/projects/men-nan' },
       { label: 'Aquatus', path: '/projects/aquatus' },
       { label: 'Terrasen', path: '/projects/terrasen' }
     ]
@@ -87,7 +88,7 @@ const Navbar: React.FC = () => {
                         {item.label}
                         <ChevronDown size={16} />
                       </span>
-                      <div className="absolute left-0 mt-8 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 bg-white shadow-lg rounded-md overflow-hidden z-50">
+                      <div className="absolute left-0 mt-48 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 bg-white shadow-lg rounded-md z-50 overflow-y-auto max-h-64">
                         {item.children.map((child) => (
                           <NavLink
                             key={child.label}

@@ -3,9 +3,9 @@ import { Project } from '../types';
 export const projects: Project[] = [
   {
     id: 'men-nan',
-    title: 'Men Nan',
+    title: 'Men-Nan',
     shortDescription: 'Projet d\'autonomisation des femmes à travers la transformation de produits locaux',
-    fullDescription: 'Men Nan est un projet qui vise à autonomiser les femmes à travers la transformation et la commercialisation de produits locaux. Le projet contribue à la réduction de la pauvreté et à l\'autonomisation économique des femmes.',
+    fullDescription: 'Men-Nan est un projet qui vise à autonomiser les femmes à travers la transformation et la commercialisation de produits locaux. Le projet contribue à la réduction de la pauvreté et à l\'autonomisation économique des femmes.',
     image: '/femmes maeva.jpg',
     goals: [
       'Transformation d\'une grande partie des ressources naturelles qui pourrissent chaque année dans le Sud',
@@ -100,7 +100,7 @@ export const projects: Project[] = [
     ]
   },
   {
-    id: 'Al Amine Dia',
+    id: 'terrasen',
     title: 'Terrasen',
     shortDescription: 'Imaginez une table capable de vous nourrir, de vous soigner mais aussi de vous permettre de générer des revenus: C\'est ce que TerraSen vous propose.',
     fullDescription: 'TerraSen est un projet d’entrepreneuriat social qui vise à lutter contre l’insécurité alimentaire en s’appuyant sur deux piliers : l’agriculture et l’élevage. Le pôle agricole repose sur la mise en place de tables de micro-jardinage, équipées d’un système d’arrosage automatique. Ces tables seront adaptées aux espaces restreints et permettront une production continue de légumes frais. La technologie de fabrication sera transmise à des groupements d’intérêt économique (GIE), qui pourront produire pour leur propre consommation, mais aussi générer des revenus grâce à la vente de kits et de produits dérivés du micro-jardinage. Le pôle élevage vise à permettre aux éleveurs de produire eux-mêmes l’alimentation nécessaire à la croissance de leur volaille, tout en développant une activité économique autour de la vente de ces aliments.',
