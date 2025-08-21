@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Users, Briefcase, Globe, Target, ChevronRight, Quote } from 'lucide-react';
+import { ArrowRight, Users, Briefcase, Globe, Target, ChevronRight, Quote, Award } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 // Témoignages fictifs
 const testimonials = [
@@ -77,69 +77,154 @@ const Home: React.FC = () => {
 
   return (
     <PageTransition>
-      {/* Hero Section - Améliorée et plus vivante */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-[#0a1931] via-[#FFD800]/80 to-[#ffb300] text-white">
-        <motion.div 
-          className="absolute inset-0 overflow-hidden"
-          style={{ y }}
-        >
-          <div
-            className="absolute inset-0 bg-cover bg-center opacity-60"
-            style={{
-              backgroundImage: "url('/cover.png')"
-            }}
-          ></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0a1931]/80 via-transparent to-[#FFD800]/30"></div>
-        </motion.div>
-        {/* Dégradé blanc en bas pour transition douce */}
-        <div className="pointer-events-none absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-white z-20" />
-        <div className="container mx-auto px-4 md:px-6 py-24 relative z-10">
-          <div className="max-w-3xl">
+      {/* Hero Section - Lumineux et Moderne */}
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-white via-[#FFD800]/10 to-[#ffb300]/20">
+        {/* Éléments décoratifs de fond */}
+        <div className="absolute inset-0 overflow-hidden">
+          {/* Formes géométriques colorées */}
+          <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-[#FFD800]/30 to-[#ffb300]/30 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-32 right-10 w-96 h-96 bg-gradient-to-r from-[#ffb300]/20 to-[#FFD800]/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-1/2 right-1/4 w-48 h-48 bg-gradient-to-r from-blue-200/40 to-blue-300/40 rounded-full blur-2xl animate-float" style={{ animationDelay: '1s' }}></div>
+        </div>
+
+        <div className="container mx-auto px-4 md:px-6 py-20 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Contenu principal */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
+              className="space-y-8"
             >
-              <motion.span 
-                className="inline-block px-4 py-2 bg-gradient-to-r from-[#FFD800] to-[#ffb300] text-black font-semibold rounded-full text-sm mb-6 shadow-lg"
+              {/* Badge d'introduction */}
+              <motion.div 
+                className="inline-flex items-center gap-3 px-6 py-3 bg-white rounded-full shadow-lg border border-[#FFD800]/20"
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.2 }}
               >
-                Student Entrepreneurs
-              </motion.span>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight drop-shadow-[0_2px_8px_rgba(255,216,0,0.15)]">
-                Entrepreneurial Action <br />
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FFD800] via-[#ffb300] to-[#0a1931] animate-gradient-move">
-                  for a Better World
-                </span>
+                <div className="w-3 h-3 bg-gradient-to-r from-[#FFD800] to-[#ffb300] rounded-full animate-pulse"></div>
+                <span className="text-gray-700 font-semibold text-sm">Student Entrepreneurs</span>
+              </motion.div>
+
+              {/* Titre principal */}
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight text-gray-900">
+                Entrepreneurial <br />
+                <span className="bg-gradient-to-r from-[#FFD800] via-[#ffb300] to-[#FF8C00] bg-clip-text text-transparent animate-gradient-shift">
+                  Action
+                </span> for a <br />
+                <span className="text-gray-700">Better World</span>
               </h1>
-              <p className="text-xl md:text-2xl mb-10 leading-relaxed max-w-2xl mx-auto font-semibold text-[#0a1931] tracking-wide">
-                Empowering our society is our priority.
+
+              {/* Sous-titre */}
+              <p className="text-xl md:text-2xl text-gray-600 leading-relaxed max-w-xl">
+                Nous créons un <strong className="text-[#FFD800]">impact positif durable</strong> à travers l'innovation entrepreneuriale et l'engagement communautaire.
               </p>
-              <div className="flex flex-wrap gap-6">
+
+              {/* Statistiques rapides */}
+              <div className="flex gap-6 pt-4">
+                {[
+                  { number: '25+', label: 'Projets' },
+                  { number: '1000+', label: 'Bénéficiaires' },
+                  { number: '20+', label: 'Communautés' }
+                ].map((stat, index) => (
+                  <motion.div
+                    key={index}
+                    className="text-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.6 + index * 0.1 }}
+                  >
+                    <div className="text-2xl font-bold text-gray-900">{stat.number}</div>
+                    <div className="text-sm text-gray-500">{stat.label}</div>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Boutons d'action */}
+              <div className="flex flex-col sm:flex-row gap-4 pt-8">
                 <Link to="/projects">
-                  <Button size="lg" className="group bg-gradient-to-r from-[#FFD800] to-[#ffb300] text-black font-bold shadow-xl hover:from-[#ffb300] hover:to-[#FFD800] transition-all duration-200">
-                    Nos projets
-                    <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
-                  </Button>
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Button size="lg" className="group bg-gradient-to-r from-[#FFD800] to-[#ffb300] text-black font-bold shadow-xl hover:shadow-2xl transition-all duration-300 px-8 py-4">
+                      Découvrir nos projets
+                      <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+                    </Button>
+                  </motion.div>
                 </Link>
                 <Link to="/contact">
-                  <Button variant="outline" size="lg" className="border-2 border-[#FFD800] text-[#FFD800] bg-transparent hover:bg-[#FFD800] hover:text-[#0a1931] font-bold shadow transition-all duration-200">
-                    Rejoins-nous
-                    <ChevronRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
-                  </Button>
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Button variant="outline" size="lg" className="border-2 border-gray-300 text-gray-700 bg-white/80 backdrop-blur-sm hover:bg-gray-50 hover:border-[#FFD800] font-bold shadow-lg transition-all duration-300 px-8 py-4">
+                      Rejoins notre équipe
+                      <ChevronRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+                    </Button>
+                  </motion.div>
                 </Link>
+              </div>
+            </motion.div>
+
+            {/* Section visuelle */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="hidden lg:flex justify-center items-center relative"
+            >
+              {/* Carte principale avec image d'équipe */}
+              <div className="relative">
+                <motion.div 
+                  className="bg-white rounded-3xl shadow-2xl p-8 max-w-md"
+                  whileHover={{ y: -10 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <img 
+                    src="/cover.png" 
+                    alt="Enactus ESP en Action" 
+                    className="w-full h-64 object-cover rounded-2xl mb-6"
+                  />
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-gray-900">Enactus ESP en Action</h3>
+                    <p className="text-gray-600">Découvrez notre engagement terrain et nos projets qui transforment les communautés.</p>
+                    <div className="flex items-center gap-2">
+                      <div className="flex -space-x-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-[#FFD800] to-[#ffb300] rounded-full border-2 border-white"></div>
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full border-2 border-white"></div>
+                        <div className="w-8 h-8 bg-gradient-to-r from-green-400 to-green-500 rounded-full border-2 border-white"></div>
+                      </div>
+                      <span className="text-sm text-gray-500 ml-2">Impact sur le terrain</span>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Éléments décoratifs flottants */}
+                <motion.div 
+                  className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-r from-[#FFD800] to-[#ffb300] rounded-2xl opacity-80 rotate-12"
+                  animate={{ rotate: [12, 24, 12] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                />
+                <motion.div 
+                  className="absolute -bottom-6 -left-6 w-20 h-20 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full opacity-70"
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                />
               </div>
             </motion.div>
           </div>
         </div>
+
+        {/* Dégradé de transition en bas */}
+        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
       </section>
 
       {/* Mission & Vision Section - Améliorée */}
-      <section className="py-24 bg-white text-neutral-900">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+      <section className="section-padding bg-gradient-to-b from-white to-gray-50">
+        <div className="container mx-auto container-padding">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="w-full flex flex-col items-center">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -151,267 +236,245 @@ const Home: React.FC = () => {
                   title="Notre Mission & Vision"
                   subtitle="Créer de l'impact positif à travers l'action entrepreneuriale"
                 />
-                <div className="space-y-10 mt-10">
+                <div className="space-y-8 mt-12">
                   <motion.div 
-                    className="border-l-4 border-enactus-yellow pl-7 py-6 bg-white hover:bg-neutral-50 transition-colors rounded-xl shadow-sm"
-                    whileHover={{ x: 5 }}
+                    className="border-l-4 border-[#FFD800] pl-8 py-8 bg-white hover:bg-gray-50 transition-all duration-300 rounded-2xl shadow-lg hover:shadow-xl"
+                    whileHover={{ x: 8, scale: 1.02 }}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
                   >
-                    <h3 className="text-2xl md:text-3xl font-bold mb-2 text-enactus-yellow tracking-tight">Notre mission</h3>
-                    <p className="text-base md:text-lg text-neutral-700 leading-relaxed font-normal">{aboutData.mission}</p>
+                    <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[#FFD800] tracking-tight">Notre mission</h3>
+                    <p className="text-base md:text-lg text-gray-700 leading-relaxed font-normal">{aboutData.mission}</p>
                   </motion.div>
                   <motion.div 
-                    className="border-l-4 border-enactus-yellow pl-7 py-6 bg-white hover:bg-neutral-50 transition-colors rounded-xl shadow-sm"
-                    whileHover={{ x: 5 }}
+                    className="border-l-4 border-[#FFD800] pl-8 py-8 bg-white hover:bg-gray-50 transition-all duration-300 rounded-2xl shadow-lg hover:shadow-xl"
+                    whileHover={{ x: 8, scale: 1.02 }}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
                   >
-                    <h3 className="text-2xl md:text-3xl font-bold mb-2 text-enactus-yellow tracking-tight">Notre vision</h3>
-                    <p className="text-base md:text-lg text-neutral-700 leading-relaxed font-normal">{aboutData.vision}</p>
+                    <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[#FFD800] tracking-tight">Notre vision</h3>
+                    <p className="text-base md:text-lg text-gray-700 leading-relaxed font-normal">{aboutData.vision}</p>
                   </motion.div>
-                </div>
-                <div className="mt-12">
-                  <Link to="/contact" className="inline-flex items-center text-enactus-yellow hover:text-amber-400 font-semibold text-lg transition-colors group">
-                    Rejoins notre mission 
-                    <ArrowRight size={22} className="ml-2 transition-transform duration-300 group-hover:translate-x-2" />
-                  </Link>
                 </div>
               </motion.div>
             </div>
-          </div>
-        </div>
-      </section>
-
-            {/* Nos Valeurs Section */}
-      <section className="py-24 bg-neutral-100">
-        <div className="container mx-auto px-4 md:px-6">
-          <SectionHeader 
-            title="Nos Valeurs"
-            subtitle="Les valeurs qui animent notre équipe et guident nos actions"
-            centered
-          />
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
-            {aboutData.values && aboutData.values.length > 0 ? (
-              aboutData.values.map((value, index) => (
-                <motion.div 
-                  key={index} 
-                  className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-enactus-yellow"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ y: -5 }}
-                >
-                  <h3 className="text-lg font-semibold text-enactus-yellow mb-2">{value.title}</h3>
-                  <p className="text-sm text-neutral-700">{value.description}</p>
-                </motion.div>
-              ))
-            ) : (
-              <div className="col-span-full text-center text-neutral-400">Aucune valeur renseignée pour l'équipe.</div>
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* Impact Stats Section - Animée */}
-      <section className="py-24 bg-gradient-to-br from-[#FFD800] via-[#ffb300]/80 to-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/cover.png')] opacity-10"></div>
-        <div className="container mx-auto px-4 md:px-6 relative">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <SectionHeader 
-                title="Notre Impact" 
-                subtitle="Créer un changement durable dans les communautés urbaines et rurales" 
-                centered
-              />
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {[
-                { icon: Globe, value: aboutData.impact.distanceParcourue, label: "Distance parcourue", count: aboutData.impact.distanceParcourue },
-                { icon: Briefcase, value: aboutData.impact.emploisCréés, label: "Emplois Créés", count: aboutData.impact.emploisCréés },
-                { icon: Users, value: aboutData.impact.viesTouchées, label: "Vies impactées", count: aboutData.impact.viesTouchées },
-                { icon: Target, value: aboutData.impact.projets, label: "Projets", count: aboutData.impact.projets }
-              ].map((stat, index) => {
-                const animated = useCountUp(cleanNumber(stat.count));
-                return (
-                  <motion.div 
-                    key={index}
-                    className="bg-white p-8 rounded-xl shadow-xl text-center transform hover:scale-105 transition-transform duration-300 border-b-4 border-[#FFD800] hover:border-[#0a1931]"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    whileHover={{ y: -5 }}
-                  >
-                    <div className="flex justify-center mb-6">
-                      <stat.icon className="h-12 w-12 text-[#FFD800] group-hover:text-[#0a1931] transition-colors" aria-label={stat.label} />
-                    </div>
-                    <div className="text-4xl font-extrabold mb-2 text-[#0a1931]" aria-live="polite">{animated.toLocaleString()}</div>
-                    <div className="text-[#0a1931] font-medium">{stat.label}</div>
-                  </motion.div>
-                );
-              })}
-            </div>
-            <motion.div 
-              className="mt-16 text-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              <div className="bg-gradient-to-r from-[#FFD800]/90 to-[#ffb300]/90 p-8 rounded-xl inline-block shadow-xl border-2 border-[#FFD800]">
-                <p className="text-2xl font-semibold mb-3 text-[#0a1931]">Revenus générés:</p>
-                <p className="text-5xl font-extrabold text-[#0a1931]">{aboutData.impact.revenus}</p>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-      {/* Section Témoignages - Slider automatique */}
-      <section className="py-24 bg-neutral-50">
-        <div className="container mx-auto px-4 md:px-6">
-          <SectionHeader 
-            title="Ils parlent de nous"
-            subtitle="Témoignages de membres, partenaires et bénéficiaires"
-            centered
-          />
-          <div className="max-w-2xl mx-auto mt-12">
+            
+            {/* Image avec animation */}
             <motion.div
-              key={testimonialIdx}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -30 }}
-              transition={{ duration: 0.6 }}
-              className="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center relative"
-              aria-live="polite"
+              className="relative"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
             >
-              <Quote className="w-10 h-10 text-enactus-yellow mb-4" />
-              <p className="text-lg italic text-neutral-700 mb-6">"{testimonials[testimonialIdx].text}"</p>
-              <div className="flex items-center gap-4">
-                <img src={testimonials[testimonialIdx].image} alt={testimonials[testimonialIdx].name} className="w-14 h-14 rounded-full object-cover border-2 border-enactus-yellow" />
-                <div className="text-left">
-                  <div className="font-bold text-neutral-900">{testimonials[testimonialIdx].name}</div>
-                  <div className="text-sm text-neutral-500">{testimonials[testimonialIdx].role}</div>
-                </div>
-              </div>
-            </motion.div>
-            <div className="flex justify-center gap-2 mt-6">
-              {testimonials.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setTestimonialIdx(idx)}
-                  className={`w-3 h-3 rounded-full ${idx === testimonialIdx ? 'bg-enactus-yellow' : 'bg-neutral-300'} focus:outline-none`}
-                  aria-label={`Témoignage ${idx + 1}`}
+              <div className="relative z-10">
+                <img 
+                  src="/enactusImg.png" 
+                  alt="Enactus ESP Team" 
+                  className="w-full h-auto rounded-2xl shadow-2xl"
                 />
-              ))}
-            </div>
+              </div>
+              {/* Éléments décoratifs */}
+              <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-r from-[#FFD800] to-[#ffb300] rounded-full opacity-20 animate-float"></div>
+              <div className="absolute -bottom-6 -left-6 w-20 h-20 bg-gradient-to-r from-[#ffb300] to-[#FFD800] rounded-full opacity-20 animate-float" style={{ animationDelay: '1s' }}></div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Project Showcase - Améliorée */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
+      {/* Projets en vedette */}
+      <section className="section-padding bg-white">
+        <div className="container mx-auto container-padding">
           <SectionHeader 
-            title="Nos Projets" 
-            subtitle="Des solutions innovantes répondant aux défis sociaux et environnementaux" 
-            centered
+            title="Projets en Vedette" 
+            subtitle="Découvrez nos initiatives les plus impactantes"
           />
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
-            {projects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <ProjectCard project={project} index={index} />
-              </motion.div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+            {projects.slice(0, 3).map((project, index) => (
+              <ProjectCard key={project.id} project={project} index={index} />
             ))}
           </div>
+          
           <motion.div 
             className="text-center mt-16"
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
           >
             <Link to="/projects">
-              <Button className="group">
-                Voir tous les projets
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+              <Button size="lg" className="bg-gradient-to-r from-[#FFD800] to-[#ffb300] text-black font-bold shadow-xl hover:from-[#ffb300] hover:to-[#FFD800] transition-all duration-300 transform hover:scale-105">
+                Voir tous nos projets
+                <ArrowRight className="ml-2" size={20} />
               </Button>
             </Link>
           </motion.div>
         </div>
       </section>
 
-      {/* SDGs Section - Améliorée */}
-<section className="py-24 bg-neutral-900 text-white">
-  <div className="container mx-auto px-4 md:px-6">
-    <SectionHeader 
-      title="Objectifs de Développement Durables" 
-      subtitle="Notre travail contribue à ces ODDs" 
-      centered
-      dark
-    />
-    <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-9 gap-8 justify-items-center mt-12">
-      {aboutData.sdgs.map((sdg, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.3, delay: index * 0.05 }}
-          whileHover={{ scale: 1.1, rotate: 2 }}
-        >
-          <div className="flex flex-col items-center space-y-2">
-            <img 
-              src={sdg.image} 
-              alt={`ODD ${sdg.number}`} 
-              className="w-20 h-20 object-contain rounded-md shadow-md"
-            />
-            <span className="text-center text-sm text-white font-medium">
-              {sdg.title}
-            </span>
+      {/* Section Impact & Statistiques */}
+      <section className="section-padding bg-gradient-to-br from-[#0a1931] via-[#0a1931]/95 to-[#0a1931]/90 text-white relative overflow-hidden">
+        {/* Éléments décoratifs */}
+        <div className="absolute top-20 left-20 w-40 h-40 bg-[#FFD800]/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 right-20 w-32 h-32 bg-[#ffb300]/10 rounded-full blur-2xl animate-float" style={{ animationDelay: '1.5s' }}></div>
+        
+        <div className="container mx-auto container-padding relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-20"
+          >
+            <h2 className="text-4xl md:text-5xl font-black mb-6 hero-text-shadow">
+              Notre <span className="gradient-text">Impact</span> en Chiffres
+            </h2>
+            <p className="text-xl text-white/80 max-w-3xl mx-auto">
+              Découvrez l'étendue de notre impact à travers des statistiques concrètes et des réalisations mesurables.
+            </p>
+          </motion.div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              { number: '25+', label: 'Projets Réalisés', icon: Target },
+              { number: '1000+', label: 'Bénéficiaires', icon: Users },
+              { number: '20+', label: 'Communautés', icon: Globe },
+              { number: '95%', label: 'Taux de Succès', icon: Award }
+            ].map((stat, index) => (
+              <motion.div
+                key={index}
+                className="text-center"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <div className="w-20 h-20 bg-gradient-to-r from-[#FFD800] to-[#ffb300] rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl">
+                  <stat.icon size={40} className="text-black" />
+                </div>
+                <div className="text-4xl md:text-5xl font-black mb-3 text-[#FFD800]">{stat.number}</div>
+                <div className="text-white/80 font-medium">{stat.label}</div>
+              </motion.div>
+            ))}
           </div>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
 
-
-      {/* CTA Section - Améliorée */}
-      <section className="py-24 bg-gradient-to-r from-amber-500 to-enactus-yellow text-neutral-900 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/cover.png')] opacity-10"></div>
-        <div className="container mx-auto px-4 md:px-6 relative">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.h2 
-              className="text-4xl md:text-5xl font-bold mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              Rejoins-nous dans la création d'impact positif
-            </motion.h2>
-            <motion.p 
-              className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              Étudiants engagés, professionnels impliqués : rejoignez Enactus et agissons ensemble pour un monde meilleur !
-            </motion.p>
+      {/* Section Témoignages */}
+      <section className="section-padding bg-white">
+        <div className="container mx-auto container-padding">
+          <SectionHeader 
+            title="Témoignages" 
+            subtitle="Ce que disent nos partenaires et bénéficiaires"
+          />
+          
+          <div className="mt-16">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              className="relative"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8 }}
             >
-              <Link to="/contact">
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="border-black text-black hover:bg-black hover:text-enactus-yellow transition-colors group"
-                >
-                  Stay tuned!
-                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
-                </Button>
-              </Link>
+              {/* Témoignage actuel */}
+              <motion.div
+                key={testimonialIdx}
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -50 }}
+                transition={{ duration: 0.5 }}
+                className="bg-gradient-to-br from-gray-50 to-white rounded-3xl p-12 shadow-2xl border border-gray-100"
+              >
+                <div className="flex flex-col lg:flex-row items-center gap-12">
+                  {/* Image */}
+                  <div className="lg:w-1/3">
+                    <div className="relative">
+                      <img 
+                        src={testimonials[testimonialIdx].image} 
+                        alt={testimonials[testimonialIdx].name}
+                        className="w-48 h-48 rounded-full object-cover mx-auto shadow-2xl"
+                      />
+                      <div className="absolute -top-2 -right-2 w-16 h-16 bg-gradient-to-r from-[#FFD800] to-[#ffb300] rounded-full flex items-center justify-center">
+                        <Quote size={32} className="text-black" />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Contenu */}
+                  <div className="lg:w-2/3 text-center lg:text-left">
+                    <blockquote className="text-2xl md:text-3xl font-medium text-gray-800 mb-8 leading-relaxed italic">
+                      "{testimonials[testimonialIdx].text}"
+                    </blockquote>
+                    <div>
+                      <div className="text-xl font-bold text-[#0a1931] mb-2">
+                        {testimonials[testimonialIdx].name}
+                      </div>
+                      <div className="text-[#FFD800] font-medium">
+                        {testimonials[testimonialIdx].role}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+              
+              {/* Indicateurs */}
+              <div className="flex justify-center mt-12 space-x-3">
+                {testimonials.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setTestimonialIdx(index)}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      index === testimonialIdx 
+                        ? 'bg-[#FFD800] w-8' 
+                        : 'bg-gray-300 hover:bg-gray-400'
+                    }`}
+                  />
+                ))}
+              </div>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Section CTA */}
+      <section className="section-padding bg-gradient-to-br from-[#FFD800] to-[#ffb300] relative overflow-hidden">
+        {/* Éléments décoratifs */}
+        <div className="absolute top-10 left-10 w-32 h-32 bg-white/20 rounded-full blur-2xl animate-float"></div>
+        <div className="absolute bottom-10 right-10 w-24 h-24 bg-white/20 rounded-full blur-xl animate-float" style={{ animationDelay: '1s' }}></div>
+        
+        <div className="container mx-auto container-padding text-center relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-4xl md:text-5xl font-black text-black mb-8">
+              Prêt à <span className="text-white">Changer le Monde</span> ?
+            </h2>
+            <p className="text-xl text-black/80 mb-12 max-w-3xl mx-auto">
+              Rejoignez notre équipe d'entrepreneurs sociaux et participez à la création d'un avenir plus durable et équitable.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Link to="/projects">
+                <Button size="lg" className="bg-black text-white font-bold shadow-2xl hover:bg-gray-800 transition-all duration-300 transform hover:scale-105">
+                  Découvrir nos projets
+                  <ArrowRight className="ml-2" size={20} />
+                </Button>
+              </Link>
+              <Link to="/contact">
+                <Button variant="outline" size="lg" className="border-3 border-black text-black bg-transparent hover:bg-black hover:text-white font-bold shadow-xl transition-all duration-300 transform hover:scale-105">
+                  Nous rejoindre
+                  <ChevronRight className="ml-2" size={20} />
+                </Button>
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </section>
     </PageTransition>

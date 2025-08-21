@@ -80,30 +80,74 @@ const Contact: React.FC = () => {
 
   return (
     <PageTransition>
-      {/* Hero Section */}
-      <section className="relative bg-neutral-900 text-white py-24">
+      {/* Hero Section moderne */}
+      <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-gradient-to-br from-white via-[#FFD800]/10 to-[#ffb300]/20">
+        {/* Éléments décoratifs */}
         <div className="absolute inset-0 overflow-hidden">
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{
-              backgroundImage: "url('/IMG_8167.jpg')",
-              opacity: 0.3
-            }}
-          ></div>
+          <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-to-r from-[#FFD800]/20 to-[#ffb300]/20 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-[#ffb300]/15 to-[#FFD800]/15 rounded-full blur-3xl animate-float" style={{ animationDelay: '1.5s' }}></div>
+          <div className="absolute top-1/2 right-1/3 w-48 h-48 bg-gradient-to-r from-blue-200/30 to-blue-300/30 rounded-full blur-2xl animate-float" style={{ animationDelay: '1s' }}></div>
         </div>
-        <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-3xl"
-          >
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Contactez-nous</h1>
-            <p className="text-xl text-neutral-300">
-              Vous avez des questions ou souhaitez vous impliquer ? Nous serions ravis de vous entendre.
-            </p>
-          </motion.div>
+
+        <div className="container mx-auto px-4 md:px-6 py-20 relative z-10">
+          <div className="max-w-5xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              {/* Badge d'introduction */}
+              <motion.div 
+                className="inline-flex items-center gap-3 px-6 py-3 bg-white rounded-full shadow-lg border border-[#FFD800]/20 mb-8"
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: 0.2 }}
+              >
+                <div className="w-3 h-3 bg-gradient-to-r from-[#FFD800] to-[#ffb300] rounded-full animate-pulse"></div>
+                <span className="text-gray-700 font-semibold text-sm">Contactez-nous</span>
+              </motion.div>
+
+              {/* Titre principal */}
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight text-gray-900 mb-8">
+                Parlons de <span className="bg-gradient-to-r from-[#FFD800] via-[#ffb300] to-[#FF8C00] bg-clip-text text-transparent animate-gradient-shift">
+                  vos projets
+                </span>
+              </h1>
+
+              {/* Sous-titre */}
+              <p className="text-xl md:text-2xl text-gray-600 leading-relaxed max-w-3xl mx-auto mb-12">
+                Prêt à rejoindre notre équipe ou à collaborer sur un projet ? 
+                Contactez-nous et discutons de la façon dont nous pouvons créer un impact ensemble.
+              </p>
+
+              {/* Statistiques rapides */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+                {[
+                  { icon: Mail, value: '24h', label: 'Temps de réponse' },
+                  { icon: Phone, value: '100%', label: 'Disponibilité' },
+                  { icon: Send, value: '50+', label: 'Projets réalisés' }
+                ].map((stat, index) => (
+                  <motion.div
+                    key={index}
+                    className="text-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.6 + index * 0.1 }}
+                  >
+                    <div className="w-16 h-16 bg-gradient-to-r from-[#FFD800] to-[#ffb300] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                      <stat.icon size={32} className="text-black" />
+                    </div>
+                    <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
+                    <div className="text-gray-600 font-medium">{stat.label}</div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
         </div>
+
+        {/* Dégradé de transition */}
+        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
       </section>
 
       {/* Contact Form Section */}

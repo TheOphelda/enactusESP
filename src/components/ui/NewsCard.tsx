@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { CalendarDays, ArrowRight } from 'lucide-react';
+import { CalendarDays, ArrowRight, Clock, User } from 'lucide-react';
 import { NewsItem } from '../../types';
 import { motion } from 'framer-motion';
 
@@ -30,44 +30,107 @@ const NewsCard: React.FC<NewsCardProps> = ({ news, index }) => {
     }
   };
 
+  const getCategoryIcon = (category: string): string => {
+    switch(category) {
+      case 'Événements':
+        return '🎉';
+      case 'Financement':
+        return '💰';
+      case 'Partenariats':
+        return '🤝';
+      case 'Projets':
+        return '🚀';
+      default:
+        return '📰';
+    }
+  };
+
   return (
     <motion.div
-      className="bg-white rounded-lg shadow-md overflow-hidden h-full flex flex-col"
-      initial={{ opacity: 0, y: 20 }}
+      className="bg-white rounded-2xl shadow-lg overflow-hidden h-full flex flex-col group hover:shadow-2xl transition-all duration-500"
+      initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      whileHover={{ y: -5 }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      whileHover={{ y: -8, scale: 1.02 }}
     >
-      <div className="relative h-48 overflow-hidden">
-        <img 
+      {/* Image avec overlay */}
+      <div className="relative h-56 overflow-hidden">
+        <motion.img 
           src={news.image} 
           alt={news.title} 
-          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-        <div 
-          className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-semibold text-white"
-          style={{ backgroundColor: getCategoryColor(news.category) }}
-        >
-          {news.category}
-        </div>
-      </div>
-      <div className="p-5 flex-grow flex flex-col">
-        <div className="flex items-center space-x-4 text-sm text-neutral-500 mb-2">
-          <div className="flex items-center">
-            <CalendarDays size={16} className="mr-1" />
-            {formatDate(news.date)}
+        {/* Overlay gradient */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+        
+        {/* Badge de catégorie */}
+        <div className="absolute top-4 left-4">
+          <div className="flex items-center gap-2 px-4 py-2 bg-white/90 backdrop-blur-sm rounded-full shadow-lg">
+            <span className="text-lg">{getCategoryIcon(news.category)}</span>
+            <span 
+              className="text-xs font-bold text-white px-2 py-1 rounded-full"
+              style={{ backgroundColor: getCategoryColor(news.category) }}
+            >
+              {news.category}
+            </span>
           </div>
         </div>
-        <h3 className="text-xl font-bold mb-2 text-neutral-900">{news.title}</h3>
-        <p className="text-neutral-600 mb-4 flex-grow">{news.summary}</p>
-        <Link 
-          to={`/news/${news.id}`}
-          className="inline-flex items-center text-enactus-yellow hover:text-amber-600 font-medium transition-colors group"
-        >
-          Lire la suite 
-          <ArrowRight size={16} className="ml-1 transition-transform duration-300 group-hover:translate-x-1" />
-        </Link>
+
+        {/* Bouton d'action flottant */}
+        <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+          <Link 
+            to={`/news/${news.id}`}
+            className="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:bg-white transition-all duration-300"
+          >
+            <ArrowRight size={20} className="text-[#0a1931] group-hover:translate-x-1 transition-transform duration-300" />
+          </Link>
+        </div>
+      </div>
+      
+      {/* Contenu de la carte */}
+      <div className="p-6 flex-grow flex flex-col">
+        {/* Métadonnées */}
+        <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+          <div className="flex items-center gap-2">
+            <CalendarDays size={16} className="text-[#FFD800]" />
+            <span>{formatDate(news.date)}</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Clock size={14} />
+            <span>5 min de lecture</span>
+          </div>
+        </div>
+        
+        {/* Titre */}
+        <h3 className="text-xl font-bold mb-3 text-[#0a1931] group-hover:text-[#FFD800] transition-colors duration-300 line-clamp-2 leading-tight">
+          {news.title}
+        </h3>
+        
+        {/* Description */}
+        <p className="text-gray-600 mb-6 flex-grow leading-relaxed line-clamp-3">
+          {news.summary}
+        </p>
+        
+        {/* Auteur et bouton */}
+        <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+          <div className="flex items-center gap-2 text-sm text-gray-500">
+            <User size={16} className="text-[#FFD800]" />
+            <span>Équipe Enactus ESP</span>
+          </div>
+          
+          <Link 
+            to={`/news/${news.id}`}
+            className="inline-flex items-center text-[#FFD800] hover:text-[#ffb300] font-semibold transition-colors group"
+          >
+            Lire la suite 
+            <ArrowRight size={16} className="ml-1 transition-transform duration-300 group-hover:translate-x-1" />
+          </Link>
+        </div>
+      </div>
+      
+      {/* Effet de brillance au survol */}
+      <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
       </div>
     </motion.div>
   );

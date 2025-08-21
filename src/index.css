@@ -5,3 +5,147 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Variables CSS personnalisées */
+:root {
+  --enactus-primary: #0a1931;
+  --enactus-secondary: #FFD800;
+  --enactus-accent: #ffb300;
+  --enactus-dark: #1a1a1a;
+  --enactus-light: #f8f9fa;
+  --enactus-gradient: linear-gradient(135deg, #FFD800 0%, #ffb300 100%);
+  --enactus-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  --enactus-shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Styles de base améliorés */
+@layer base {
+  body {
+    font-family: 'Inter', 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--enactus-dark);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+}
+
+/* Composants personnalisés */
+@layer components {
+  .hero-text-shadow {
+    text-shadow: 
+      0 2px 4px rgba(0, 0, 0, 0.8),
+      0 4px 8px rgba(0, 0, 0, 0.6),
+      0 8px 16px rgba(0, 0, 0, 0.4);
+  }
+  
+  .hero-overlay {
+    background: linear-gradient(
+      135deg,
+      rgba(10, 25, 49, 0.95) 0%,
+      rgba(10, 25, 49, 0.85) 50%,
+      rgba(10, 25, 49, 0.9) 100%
+    );
+  }
+  
+  .text-glow {
+    filter: drop-shadow(0 0 8px rgba(255, 216, 0, 0.3));
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-2xl hover:-translate-y-2;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#FFD800] to-[#ffb300];
+  }
+
+  .section-padding {
+    @apply py-20 md:py-32;
+  }
+
+  .container-padding {
+    @apply px-4 md:px-6 lg:px-8;
+  }
+
+  .glass-effect {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+
+  .timeline-dot {
+    @apply w-16 h-16 bg-gradient-to-r from-[#FFD800] to-[#ffb300] rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg;
+  }
+
+  .project-card {
+    @apply bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-3;
+  }
+
+  .hero-section {
+    @apply relative min-h-[90vh] flex items-center overflow-hidden;
+  }
+
+  .content-section {
+    @apply py-20 bg-gradient-to-b from-white to-gray-50;
+  }
+}
+
+/* Animations personnalisées */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 216, 0, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(255, 216, 0, 0.6); }
+}
+
+.animate-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Scrollbar personnalisée */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #FFD800, #ffb300);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #ffb300, #FFD800);
+}
+
+/* Effets de focus améliorés */
+.focus-ring {
+  @apply focus:outline-none focus:ring-4 focus:ring-[#FFD800]/50 focus:ring-offset-2;
+}
+
+/* Transitions fluides */
+.smooth-transition {
+  @apply transition-all duration-300 ease-out;
+}
