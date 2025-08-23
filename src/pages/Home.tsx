@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Users, Briefcase, Globe, Target, ChevronRight, Quote, Award } from 'lucide-react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { ArrowRight, Users, Globe, Target, ChevronRight, Quote, Award } from 'lucide-react';
+import { motion } from 'framer-motion';
 // Témoignages fictifs
 const testimonials = [
   {
@@ -56,8 +56,14 @@ import { projects } from '../data/projects';
 import { aboutData } from '../data/about';
 
 const Home: React.FC = () => {
-  const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 500], [0, 100]);
+  // ...existing code...
+  // Helper to clean numbers (remove spaces, handle string/number)
+  const cleanNumber = (val: string | number) => {
+    if (typeof val === 'string') {
+      return Number(val.replace(/\s/g, ''));
+    }
+    return val;
+  };
   // Slider témoignages
   const [testimonialIdx, setTestimonialIdx] = useState(0);
   useEffect(() => {
@@ -67,13 +73,7 @@ const Home: React.FC = () => {
     return () => clearInterval(timer);
   }, []);
 
-  // Helper to clean numbers (remove spaces, handle string/number)
-  const cleanNumber = (val: string | number) => {
-    if (typeof val === 'string') {
-      return Number(val.replace(/\s/g, ''));
-    }
-    return val;
-  };
+  // ...existing code...
 
   return (
     <PageTransition>
@@ -357,7 +357,11 @@ const Home: React.FC = () => {
                 <div className="w-20 h-20 bg-gradient-to-r from-[#FFD800] to-[#ffb300] rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl">
                   <stat.icon size={40} className="text-black" />
                 </div>
-                <div className="text-4xl md:text-5xl font-black mb-3 text-[#FFD800]">{stat.number}</div>
+                <div className="text-4xl md:text-5xl font-black mb-3 text-[#FFD800]">
+                  {typeof stat.number === 'string' && stat.number.match(/%|\$/)
+                    ? stat.number // Affiche les pourcentages et montants tels quels
+                    : useCountUp(cleanNumber(stat.number))}
+                </div>
                 <div className="text-white/80 font-medium">{stat.label}</div>
               </motion.div>
             ))}

@@ -162,10 +162,11 @@ const ProjectDetail: React.FC = () => {
               >
                 <SectionHeader title="À propos du Projet" />
                 <div className="prose prose-lg max-w-none">
+                  {/* Description complète */}
                   <p className="text-gray-700 leading-relaxed text-lg mb-8">
-                    {project.description}
+                    {project.fullDescription || project.description}
                   </p>
-                  
+
                   {/* Objectifs du projet */}
                   <div className="bg-gradient-to-r from-[#FFD800]/10 to-[#ffb300]/10 rounded-2xl p-8 mb-8 border-l-4 border-[#FFD800]">
                     <h3 className="text-2xl font-bold text-[#0a1931] mb-4 flex items-center">
@@ -173,24 +174,45 @@ const ProjectDetail: React.FC = () => {
                       Objectifs du Projet
                     </h3>
                     <ul className="space-y-3 text-gray-700">
-                      {project.objectives?.map((objective, index) => (
+                      {project.goals?.map((goal, index) => (
                         <li key={index} className="flex items-start">
                           <div className="w-2 h-2 bg-[#FFD800] rounded-full mt-3 mr-3 flex-shrink-0"></div>
-                          <span>{objective}</span>
-                        </li>
-                      )) || [
-                        "Améliorer la qualité de vie des communautés locales",
-                        "Créer des opportunités économiques durables",
-                        "Promouvoir l'innovation sociale et environnementale"
-                      ].map((objective, index) => (
-                        <li key={index} className="flex items-start">
-                          <div className="w-2 h-2 bg-[#FFD800] rounded-full mt-3 mr-3 flex-shrink-0"></div>
-                          <span>{objective}</span>
+                          <span>{goal}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
-                  
+
+                  {/* Impact du projet */}
+                  {project.impact && (
+                    <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 mb-8">
+                      <h3 className="text-2xl font-bold text-[#0a1931] mb-4 flex items-center">
+                        <Award className="mr-3 text-[#FFD800]" size={28} />
+                        Impact du Projet
+                      </h3>
+                      <p className="text-gray-700 text-lg">{project.impact}</p>
+                    </div>
+                  )}
+
+                  {/* Équipe du projet */}
+                  {project.team && (
+                    <div className="bg-gradient-to-r from-[#FFD800]/10 to-[#ffb300]/10 rounded-2xl p-8 mb-8 border-l-4 border-[#FFD800]">
+                      <h3 className="text-2xl font-bold text-[#0a1931] mb-4 flex items-center">
+                        <Users className="mr-3 text-[#FFD800]" size={28} />
+                        Équipe du Projet
+                      </h3>
+                      <ul className="space-y-3 text-gray-700">
+                        {project.team.map((member, idx) => (
+                          <li key={idx} className="flex items-center">
+                            <div className="w-2 h-2 bg-[#FFD800] rounded-full mr-3 flex-shrink-0"></div>
+                            <span className="font-semibold">{member.name}</span>
+                            <span className="ml-2 text-sm text-gray-500">{member.role}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
                   {/* Méthodologie */}
                   <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
                     <h3 className="text-2xl font-bold text-[#0a1931] mb-6 flex items-center">
