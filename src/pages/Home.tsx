@@ -341,10 +341,10 @@ const Home: React.FC = () => {
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { number: '25+', label: 'Projets Réalisés', icon: Target },
-              { number: '1000+', label: 'Bénéficiaires', icon: Users },
-              { number: '20+', label: 'Communautés', icon: Globe },
-              { number: '95%', label: 'Taux de Succès', icon: Award }
+              { number: aboutData.impact.projets, label: 'Projets Réalisés', icon: Target },
+              { number: aboutData.impact.viesTouchées, label: 'Vies Touchées', icon: Users },
+              { number: aboutData.impact.personnesFormées, label: 'Personnes Formées', icon: Globe },
+              { number: aboutData.impact.augmentationDeRevenus, label: 'Augmentation de Revenus', icon: Award }
             ].map((stat, index) => (
               <motion.div
                 key={index}

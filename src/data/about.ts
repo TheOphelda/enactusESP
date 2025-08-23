@@ -30,10 +30,9 @@ export const aboutData = {
     revenus: "173 193 $",
     distanceParcourue: "8 949",
     projets: 8,
-    /*countries: 37,
-    universities: 1800,
+    /*
     students: 72000,
-    peopleImpacted: "1.3M"*/
+    */
   },
   sdgs: [
     { number: 1, title: "Pas de pauvreté", color: "#E5243B", image: "/odds/odd1.png" },
