@@ -122,24 +122,29 @@ const Home: React.FC = () => {
               </p>
 
               {/* Statistiques rapides */}
-              <div className="flex gap-6 pt-4">
-                {[
-                  { number: '25+', label: 'Projets' },
-                  { number: '1000+', label: 'Bénéficiaires' },
-                  { number: '20+', label: 'Communautés' }
-                ].map((stat, index) => (
-                  <motion.div
-                    key={index}
-                    className="text-center"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.6 + index * 0.1 }}
-                  >
-                    <div className="text-2xl font-bold text-gray-900">{stat.number}</div>
-                    <div className="text-sm text-gray-500">{stat.label}</div>
-                  </motion.div>
-                ))}
-              </div>
+                <div className="flex gap-6 pt-4">
+                  {[
+                    { number: aboutData.impact.projets, label: 'Projets', icon: Target },
+                    { number: aboutData.impact.viesTouchées, label: 'Vies Touchées', icon: Users },
+                    { number: aboutData.impact.personnesFormées, label: 'Personnes Formées', icon: Globe }
+                  ].map((stat, index) => (
+                    <motion.div
+                      key={index}
+                      className="text-center"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.6 + index * 0.1 }}
+                    >
+                      <div className="w-12 h-12 bg-gradient-to-r from-[#FFD800] to-[#ffb300] rounded-full flex items-center justify-center mx-auto mb-2 shadow-lg">
+                        <stat.icon size={28} className="text-black" />
+                      </div>
+                      <div className="text-2xl font-black mb-1 text-[#FFD800]">
+                        {typeof stat.number === 'string' ? useCountUp(cleanNumber(stat.number)) : useCountUp(stat.number)}
+                      </div>
+                      <div className="text-gray-600 text-sm font-medium">{stat.label}</div>
+                    </motion.div>
+                  ))}
+                </div>
 
               {/* Boutons d'action */}
               <div className="flex flex-col sm:flex-row gap-4 pt-8">
