@@ -5,7 +5,9 @@ import PageTransition from '../components/ui/PageTransition';
 import SectionHeader from '../components/ui/SectionHeader';
 import NewsCard from '../components/ui/NewsCard';
 import { newsItems } from '../data/news';
-import { Search, Filter, TrendingUp, Calendar, Users, Award } from 'lucide-react';
+import { Search, Filter, TrendingUp, Calendar, Users } from 'lucide-react';
+
+import { Helmet } from 'react-helmet-async';
 
 const News: React.FC = () => {
   const [filter, setFilter] = useState<string>('all');
@@ -30,7 +32,16 @@ const News: React.FC = () => {
   ];
 
   return (
-    <PageTransition>
+    <>
+      <Helmet>
+        <title>Actualités - Enactus Sénégal</title>
+        <meta name="description" content="Retrouvez toutes les actualités, événements et projets d'Enactus Sénégal. Restez informé sur notre impact et nos actions." />
+        <meta name="keywords" content="Enactus, Sénégal, actualités, news, événements, projets, impact" />
+        <meta property="og:title" content="Actualités - Enactus Sénégal" />
+        <meta property="og:description" content="Retrouvez toutes les actualités, événements et projets d'Enactus Sénégal. Restez informé sur notre impact et nos actions." />
+        <meta property="og:image" content="/cover.png" />
+      </Helmet>
+      <PageTransition>
       {/* Hero Section moderne */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-gradient-to-br from-white via-[#FFD800]/10 to-[#ffb300]/20">
         {/* Éléments décoratifs */}
@@ -281,7 +292,8 @@ const News: React.FC = () => {
       </section>
       
       <BackToTop />
-    </PageTransition>
+      </PageTransition>
+    </>
   );
 };
 

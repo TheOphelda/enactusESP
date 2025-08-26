@@ -12,6 +12,8 @@ import Button from '../components/ui/Button';
 import { projects } from '../data/projects';
 import { Project } from '../types';
 
+import { Helmet } from 'react-helmet-async';
+
 const ProjectDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
@@ -44,7 +46,16 @@ const ProjectDetail: React.FC = () => {
   }
 
   return (
-    <PageTransition>
+    <>
+      <Helmet>
+        <title>{project?.title ? `${project.title} - Projet Enactus Sénégal` : 'Projet Enactus Sénégal'}</title>
+        <meta name="description" content={project?.fullDescription || project?.shortDescription || 'Découvrez les projets Enactus Sénégal, leur impact et leur équipe.'} />
+        <meta name="keywords" content="Enactus, Sénégal, projet, impact, développement durable, équipe, innovation" />
+        <meta property="og:title" content={project?.title ? `${project.title} - Projet Enactus Sénégal` : 'Projet Enactus Sénégal'} />
+        <meta property="og:description" content={project?.fullDescription || project?.shortDescription || 'Découvrez les projets Enactus Sénégal, leur impact et leur équipe.'} />
+        <meta property="og:image" content={project?.image || '/cover.png'} />
+      </Helmet>
+      <PageTransition>
       {/* Hero Section moderne */}
       <section className="relative min-h-[80vh] flex items-center overflow-hidden bg-gradient-to-br from-white via-[#FFD800]/10 to-[#ffb300]/20">
         <div className="absolute inset-0 overflow-hidden">
@@ -246,7 +257,8 @@ const ProjectDetail: React.FC = () => {
         </div>
       </section>
       <BackToTop />
-    </PageTransition>
+      </PageTransition>
+    </>
   );
 };
 

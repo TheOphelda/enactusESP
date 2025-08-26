@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Users, Globe, Target, ChevronRight, Quote, Award } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -76,7 +77,16 @@ const Home: React.FC = () => {
   // ...existing code...
 
   return (
-    <PageTransition>
+      <>
+        <Helmet>
+          <title>Enactus Sénégal - Entrepreneurial Action for a Better World</title>
+          <meta name="description" content="Enactus Sénégal crée un impact positif durable à travers l'innovation entrepreneuriale et l'engagement communautaire. Découvrez nos projets, notre équipe et notre vision." />
+          <meta name="keywords" content="Enactus, Sénégal, entrepreneuriat, impact, projets, développement durable, étudiants, innovation" />
+          <meta property="og:title" content="Enactus Sénégal - Entrepreneurial Action for a Better World" />
+          <meta property="og:description" content="Enactus Sénégal crée un impact positif durable à travers l'innovation entrepreneuriale et l'engagement communautaire." />
+          <meta property="og:image" content="/cover.png" />
+        </Helmet>
+        <PageTransition>
       {/* Hero Section - Lumineux et Moderne */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-white via-[#FFD800]/10 to-[#ffb300]/20">
         {/* Éléments décoratifs de fond */}
@@ -124,7 +134,6 @@ const Home: React.FC = () => {
               {/* Statistiques rapides */}
                 <div className="flex gap-6 pt-4">
                   {[
-                    { number: aboutData.impact.projets, label: 'Projets', icon: Target },
                     { number: aboutData.impact.viesTouchées, label: 'Vies Touchées', icon: Users },
                     { number: aboutData.impact.personnesFormées, label: 'Personnes Formées', icon: Globe }
                   ].map((stat, index) => (
@@ -486,7 +495,8 @@ const Home: React.FC = () => {
           </motion.div>
         </div>
       </section>
-    </PageTransition>
+      </PageTransition>
+    </>
   );
 };
 

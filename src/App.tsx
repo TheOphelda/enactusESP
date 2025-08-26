@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import { AnimatePresence } from 'framer-motion';
 
 // Layout Components
@@ -15,21 +16,23 @@ import NotFound from './pages/NotFound';
 
 function App() {
   return (
-    <Router>
-      <AnimatePresence mode="wait">
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/news" element={<News />} />
-            <Route path="/news/:id" element={<NewsDetail />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/projects/:id" element={<ProjectDetail />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Layout>
-      </AnimatePresence>
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <AnimatePresence mode="wait">
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/news" element={<News />} />
+              <Route path="/news/:id" element={<NewsDetail />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/projects/:id" element={<ProjectDetail />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Layout>
+        </AnimatePresence>
+      </Router>
+    </HelmetProvider>
   );
 }
 

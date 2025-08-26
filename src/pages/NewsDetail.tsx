@@ -9,6 +9,8 @@ import SectionHeader from '../components/ui/SectionHeader';
 import { newsItems } from '../data/news';
 import { NewsItem } from '../types';
 
+import { Helmet } from 'react-helmet-async';
+
 const NewsDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
@@ -69,7 +71,16 @@ const NewsDetail: React.FC = () => {
   };
 
   return (
-    <PageTransition>
+    <>
+      <Helmet>
+        <title>{news?.title ? `${news.title} - Actualité Enactus Sénégal` : 'Actualité Enactus Sénégal'}</title>
+        <meta name="description" content={news?.summary || news?.title || 'Découvrez les actualités et événements d’Enactus Sénégal.'} />
+        <meta name="keywords" content="Enactus, Sénégal, actualité, news, événement, projet, impact" />
+        <meta property="og:title" content={news?.title ? `${news.title} - Actualité Enactus Sénégal` : 'Actualité Enactus Sénégal'} />
+        <meta property="og:description" content={news?.summary || news?.title || 'Découvrez les actualités et événements d’Enactus Sénégal.'} />
+        <meta property="og:image" content={news?.image || '/cover.png'} />
+      </Helmet>
+      <PageTransition>
       {/* Hero Section */}
       <section className="relative bg-neutral-900 text-white py-20">
         <div className="absolute inset-0 overflow-hidden">
@@ -204,7 +215,8 @@ const NewsDetail: React.FC = () => {
         </section>
       )}
       <BackToTop />
-    </PageTransition>
+      </PageTransition>
+    </>
   );
 };
 
