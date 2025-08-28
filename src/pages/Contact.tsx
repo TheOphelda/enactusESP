@@ -125,7 +125,7 @@ const Contact: React.FC = () => {
                 {[
                   { icon: Mail, value: '24h', label: 'Temps de réponse' },
                   { icon: Phone, value: '100%', label: 'Disponibilité' },
-                  { icon: Send, value: '50+', label: 'Projets réalisés' }
+                  { icon: Send, value: '5+', label: 'Projets réalisés' }
                 ].map((stat, index) => (
                   <motion.div
                     key={index}

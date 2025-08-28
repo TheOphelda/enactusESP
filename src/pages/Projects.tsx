@@ -45,14 +45,14 @@ const Projects: React.FC = () => {
     },
     { 
       icon: Globe, 
-      value: '15+', 
+      value: 8+', 
       label: 'Communautés',
       description: 'Zones d\'intervention',
       color: 'from-blue-500 to-cyan-500'
     },
     { 
       icon: TrendingUp, 
-      value: '95%', 
+      value: '87,5%', 
       label: 'Taux de succès',
       description: 'Projets réussis',
       color: 'from-purple-500 to-pink-500'
